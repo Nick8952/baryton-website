@@ -143,6 +143,26 @@ Bewertungen, Betreiberangaben oder Fotos.
 11. «Wenige Gehminuten vom Hauptbahnhof» war eine Schätzung und ist raus; die
     Lagebeschreibung stützt sich jetzt nur noch auf Adresse und Stadtplan.
 
+## Live auf GitHub Pages
+
+Nach dem Deployment gegen <https://nick8952.github.io/baryton-website/> geprüft,
+nicht nur lokal:
+
+| Adresse | Ergebnis |
+|---|---|
+| `/` | HTTP 200 |
+| `/getraenke/` | HTTP 200 |
+| `/besuch/` | HTTP 200 |
+| `/impressum/` | HTTP 200 |
+| `/datenschutz/` | HTTP 200 |
+| `/robots.txt` | HTTP 200 |
+| `/gibtsnicht/` | HTTP 404 mit der gestalteten Fehlerseite |
+
+Jede Unterseite lässt sich direkt aufrufen und neu laden. Schriften und Skripte
+kommen unter dem Unterpfad `/baryton-website/_next/…`. Im Browser bei 390 und
+1440 px: kein horizontaler Überlauf, `noindex` vorhanden, keine externen Requests.
+Die Demo ist ohne GitHub-Anmeldung erreichbar.
+
 ## Nicht geprüft
 
 - Echte Geräte und echte Bildschirmleser.
