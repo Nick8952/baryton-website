@@ -35,6 +35,8 @@ export default defineConfig({
             S.divider(),
             S.documentTypeListItem("getraenkekategorie").title("Getränkekategorien"),
             S.documentTypeListItem("getraenk").title("Getränke"),
+            S.documentTypeListItem("speisekategorie").title("Speisekategorien"),
+            S.documentTypeListItem("speise").title("Speisen"),
             S.documentTypeListItem("sonderoeffnungszeit").title("Abweichende Öffnungszeiten"),
             S.divider(),
             S.documentTypeListItem("rechtstext").title("Rechtstexte"),
@@ -68,6 +70,19 @@ export default defineConfig({
           getraenkekategorie: defineLocations({
             select: { titel: "titel" },
             resolve: (doc) => ({ locations: [{ title: `${doc?.titel ?? "Kategorie"} – Getränke`, href: "/getraenke" }] }),
+          }),
+          speise: defineLocations({
+            select: { name: "name" },
+            resolve: (doc) => ({
+              locations: [
+                { title: `${doc?.name ?? "Speise"} – Getränke & Speisen`, href: "/getraenke" },
+                { title: "Startseite", href: "/" },
+              ],
+            }),
+          }),
+          speisekategorie: defineLocations({
+            select: { titel: "titel" },
+            resolve: (doc) => ({ locations: [{ title: `${doc?.titel ?? "Kategorie"} – Getränke & Speisen`, href: "/getraenke" }] }),
           }),
           sonderoeffnungszeit: defineLocations({
             message: "Abweichende Zeiten erscheinen auf der Besuchsseite.",

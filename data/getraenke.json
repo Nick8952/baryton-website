@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "id": "getr-gluehwein",
+    "name": "Glühwein",
+    "beschreibung": "Hausgemacht.",
+    "preis": 16,
+    "hinweis": "November bis Dezember",
+    "kategorie": "kat-saisonal",
+    "reihenfolge": 1
+  },
+  {
+    "id": "getr-appenzeller-lager",
+    "name": "Appenzeller Lager",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "5 dl", "preis": 8.5 },
+      { "_key": "v2", "bezeichnung": "1 Liter (Mass)", "preis": 15.5 }
+    ],
+    "kategorie": "kat-bier",
+    "reihenfolge": 1
+  },
+  {
+    "id": "getr-appenzeller-quoellfrisch",
+    "name": "Appenzeller Quöllfrisch",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "5 dl", "preis": 8.5 },
+      { "_key": "v2", "bezeichnung": "1 Liter (Mass)", "preis": 15.5 }
+    ],
+    "kategorie": "kat-bier",
+    "reihenfolge": 2
+  },
+  {
+    "id": "getr-appenzeller-dunkel",
+    "name": "Appenzeller Dunkel",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "5 dl", "preis": 8.5 },
+      { "_key": "v2", "bezeichnung": "1 Liter (Mass)", "preis": 15.5 }
+    ],
+    "kategorie": "kat-bier",
+    "reihenfolge": 3
+  },
+  {
+    "id": "getr-sangria-spritz",
+    "name": "Sangria Spritz",
+    "beschreibung": "Weiss oder rot.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Glas", "preis": 8.5 },
+      { "_key": "v2", "bezeichnung": "Flasche", "preis": 38.5 }
+    ],
+    "kategorie": "kat-aperitif",
+    "reihenfolge": 1
+  },
+  {
+    "id": "getr-rose-spritz",
+    "name": "Rosé Spritz",
+    "preis": 8.5,
+    "menge": "Glas",
+    "kategorie": "kat-aperitif",
+    "reihenfolge": 2
+  },
+  {
+    "id": "getr-aperol-spritz",
+    "name": "Aperol Spritz",
+    "preis": 13.5,
+    "menge": "Glas",
+    "kategorie": "kat-aperitif",
+    "reihenfolge": 3
+  },
+  {
+    "id": "getr-hugo",
+    "name": "Hugo",
+    "beschreibung": "Prosecco mit Holundersirup.",
+    "preis": 13.5,
+    "menge": "Glas",
+    "kategorie": "kat-aperitif",
+    "reihenfolge": 4
+  },
+  {
+    "id": "getr-negroni",
+    "name": "Negroni",
+    "kategorie": "kat-klassiker",
+    "reihenfolge": 1
+  },
+  {
+    "id": "getr-moscow-mule",
+    "name": "Moscow Mule",
+    "kategorie": "kat-klassiker",
+    "reihenfolge": 2
+  },
+  {
+    "id": "getr-darkn-stormy",
+    "name": "Dark'n Stormy",
+    "kategorie": "kat-klassiker",
+    "reihenfolge": 3
+  },
+  {
+    "id": "getr-amaretto-sour",
+    "name": "Amaretto Sour",
+    "kategorie": "kat-klassiker",
+    "reihenfolge": 4
+  }
+]

@@ -69,6 +69,33 @@ export const karteBaustein = defineType({
   preview: { select: { title: "titel" }, prepare: ({ title }) => ({ title: title || "Getränkekarte" }) },
 });
 
+export const speisenBaustein = defineType({
+  name: "speisenBaustein",
+  title: "Speisekarte",
+  type: "object",
+  description: "Zeigt Kategorien und Speisen. Solange keine Speisen erfasst sind, erscheint der Hinweistext – nie erfundene Beispiele.",
+  fields: [
+    ...kopf,
+    defineField({ name: "einleitung", title: "Einleitung", type: "text", rows: 2 }),
+    defineField({
+      name: "kategorien",
+      title: "Auswahl der Kategorien",
+      type: "array",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "speisekategorie" }] })],
+      description: "Leer lassen = alle Kategorien in ihrer Reihenfolge.",
+    }),
+    defineField({
+      name: "hinweis",
+      title: "Hinweis, solange keine Karte erfasst ist",
+      type: "text",
+      rows: 3,
+      description: "Erscheint anstelle der Karte, wenn noch keine Speisen hinterlegt sind.",
+    }),
+    defineField({ name: "weiterLink", title: "Link am Ende", type: "link" }),
+  ],
+  preview: { select: { title: "titel" }, prepare: ({ title }) => ({ title: title || "Speisekarte" }) },
+});
+
 export const oeffnungszeitenBaustein = defineType({
   name: "oeffnungszeitenBaustein",
   title: "Öffnungszeiten",
@@ -216,6 +243,7 @@ export const rechtstextBaustein = defineType({
 export const bausteine = [
   textBaustein,
   karteBaustein,
+  speisenBaustein,
   oeffnungszeitenBaustein,
   faktenBaustein,
   spaltenBaustein,

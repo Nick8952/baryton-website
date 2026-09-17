@@ -97,20 +97,56 @@ export interface Getraenkekategorie {
 }
 
 /**
+ * Eine Grössen-/Preisvariante, z. B. «Standard» / «Medium» / «Family» bei Pizzen oder
+ * «Glas» / «Flasche» bei Spritz. Wird verwendet, wenn ein Eintrag nicht einen einzigen
+ * Preis hat, sondern mehrere je nach Grösse.
+ */
+export interface Preisvariante {
+  _key: string;
+  bezeichnung: string;
+  preis: number;
+}
+
+/**
  * Ein Eintrag der Getränkekarte. Alle Angaben ausser `name` sind optional, damit eine Karte
  * auch dann korrekt dargestellt wird, wenn (noch) keine Preise oder Mengen bekannt sind.
+ * Hat ein Getränk mehrere Grössen (z. B. Bier als Mass oder 5 dl), stehen die Preise in
+ * `varianten` statt in `preis`/`menge`.
  */
 export interface Getraenk {
   id: string;
   name: string;
   beschreibung?: string;
-  /** Preis in Franken als Zahl, z. B. 18.5 – die Darstellung formatiert «18.50» */
+  /** Preis in Franken als Zahl, z. B. 18.5 – die Darstellung formatiert «18.50». Nur nutzen, wenn es genau einen Preis gibt. */
   preis?: number;
-  /** z. B. «4 cl» oder «0.3 l» */
+  /** z. B. «4 cl» oder «0.3 l» – nur zusammen mit `preis`, nicht zusammen mit `varianten`. */
   menge?: string;
-  /** Kurzer Zusatz, z. B. «alkoholfrei» */
+  /** Grössen-/Preisvarianten (z. B. Glas/Flasche, 5 dl/Mass). Ersetzt `preis`/`menge`. */
+  varianten?: Preisvariante[];
+  /** Kurzer Zusatz, z. B. «alkoholfrei» oder «neu im Sortiment» */
   hinweis?: string;
   /** id einer Getraenkekategorie */
+  kategorie: string;
+  reihenfolge: number;
+}
+
+/** Eine Kategorie der Speisekarte (z. B. «Pizza», «Burger»). */
+export interface Speisekategorie {
+  id: string;
+  titel: string;
+  beschreibung?: string;
+  reihenfolge: number;
+}
+
+/** Ein Eintrag der Speisekarte – gleicher Aufbau wie ein Getränk, nur mit «name» statt «name». */
+export interface Speise {
+  id: string;
+  name: string;
+  beschreibung?: string;
+  preis?: number;
+  varianten?: Preisvariante[];
+  hinweis?: string;
+  /** id einer Speisekategorie */
   kategorie: string;
   reihenfolge: number;
 }
@@ -184,6 +220,21 @@ export interface KarteBaustein extends BausteinBasis {
   weiterLink?: Link;
 }
 
+/**
+ * Speisekarte – gleicher Aufbau wie die Getränkekarte, nur für Speisen. Liegt keine
+ * Speisekarte vor, bleiben `kategorien` leer und `hinweis` erklärt, warum.
+ */
+export interface SpeisenBaustein extends BausteinBasis {
+  _type: "speisenBaustein";
+  einleitung?: string;
+  /** Leer = alle Kategorien in ihrer Reihenfolge */
+  kategorien: Speisekategorie[];
+  speisen: Speise[];
+  /** Text, der erscheint, wenn keine Speisen hinterlegt sind */
+  hinweis?: string;
+  weiterLink?: Link;
+}
+
 export interface OeffnungszeitenBaustein extends BausteinBasis {
   _type: "oeffnungszeitenBaustein";
   einleitung?: string;
@@ -231,6 +282,7 @@ export interface RechtstextBaustein extends BausteinBasis {
 export type Baustein =
   | TextBaustein
   | KarteBaustein
+  | SpeisenBaustein
   | OeffnungszeitenBaustein
   | FaktenBaustein
   | SpaltenBaustein
@@ -242,6 +294,7 @@ export type Baustein =
 export const BAUSTEIN_TYPEN: Baustein["_type"][] = [
   "textBaustein",
   "karteBaustein",
+  "speisenBaustein",
   "oeffnungszeitenBaustein",
   "faktenBaustein",
   "spaltenBaustein",
@@ -283,5 +336,7 @@ export interface Inhaltsquelle {
   getAlleSeitenSlugs(): Promise<string[]>;
   getGetraenkekategorien(): Promise<Getraenkekategorie[]>;
   getGetraenke(): Promise<Getraenk[]>;
+  getSpeisekategorien(): Promise<Speisekategorie[]>;
+  getSpeisen(): Promise<Speise[]>;
   getRechtstext(art: Rechtstext["art"]): Promise<Rechtstext | null>;
 }

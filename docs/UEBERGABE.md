@@ -14,13 +14,24 @@ Diese Punkte sind in `docs/QUELLEN.md` hergeleitet. Gebündelt für ein Gespräc
 3. **E-Mail-Adresse**, die tatsächlich gelesen wird. In einem Verzeichniseintrag von
    2021 steht `mbf@baryton.ch` – ungeprüft und deshalb nicht verwendet. Erst mit
    einer bestätigten Adresse erscheint auf der Kontaktseite «E-Mail vorbereiten».
-4. **Getränkekarte** mit Bezeichnungen, Mengen und Preisen.
+4. **Vollständige, aktuelle Getränke- und Speisekarte.** Ein Ausschnitt ist seit dem
+   17.09.2026 fotografisch belegt und auf der Website eingetragen (Bier, Aperitif,
+   ein paar Cocktailnamen, Salate, Burger, Flammkuchen, Pizza – siehe
+   `docs/QUELLEN.md`). Offen: die vollständige Cocktailkarte mit Preisen, ob die
+   „Käferwiesn"-Angebote (Bierbrezn, Weisswürste, Wiesn-Pizza) dauerhaft oder nur
+   saisonal erhältlich sind, der fehlende Family-Preis der Pizza «Nebraska», und ob
+   das Appenzeller-Ginger-Beer tatsächlich im Sortiment ist.
 5. **Fotos und Originallogo:** Für die Vorschau ist ein von Nick freigegebener,
    per KI nach dem Leuchtschild erstellter Wortmarken-Nachbau eingebaut. Er ist
    nicht das Originallogo und muss vom Betrieb selbst freigegeben oder durch eine
    freigegebene Originaldatei ersetzt werden, sobald der Betrieb die Demo sieht.
    Weitere Fotos fehlen weiterhin und benötigen ebenfalls eine ausdrückliche
    Freigabe zur Nutzung auf der Website.
+   **Neu entdeckt:** Auf der gedruckten Speisekarte ist ein zweites, eigenständiges
+   offizielles Logo zu sehen (Eule mit Fliege, «Baryton & MUSIC-BAR») – anders als
+   die Fassadenbeschriftung, nach der die aktuelle Wortmarke gestaltet ist. Zu klären:
+   welches Logo massgeblich ist, bzw. ob eine saubere Originaldatei des Eulen-Logos
+   existiert. Details in `docs/QUELLEN.md`.
 6. **Reservationen:** Werden sie entgegengenommen, und wie? Ohne bestätigten Prozess
    bleibt die Website ohne Reservationsfunktion.
 7. **Anlässe und abweichende Öffnungszeiten**, die regelmässig anfallen.

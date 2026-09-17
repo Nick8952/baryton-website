@@ -1,4 +1,4 @@
-import { adresseTyp, bildTyp, linkTyp, oeffnungszeitTyp, richTextTyp } from "./objekte";
+import { adresseTyp, bildTyp, linkTyp, oeffnungszeitTyp, preisvarianteTyp, richTextTyp } from "./objekte";
 import { bausteine } from "./bausteine";
 import {
   einstellungenTyp,
@@ -7,6 +7,8 @@ import {
   rechtstextTyp,
   seiteTyp,
   sonderoeffnungszeitTyp,
+  speiseTyp,
+  speisekategorieTyp,
 } from "./dokumente";
 
 export const schemaTypes = [
@@ -16,12 +18,15 @@ export const schemaTypes = [
   richTextTyp,
   adresseTyp,
   oeffnungszeitTyp,
+  preisvarianteTyp,
   ...bausteine,
   // Dokumente
   einstellungenTyp,
   seiteTyp,
   getraenkekategorieTyp,
   getraenkTyp,
+  speisekategorieTyp,
+  speiseTyp,
   sonderoeffnungszeitTyp,
   rechtstextTyp,
 ];

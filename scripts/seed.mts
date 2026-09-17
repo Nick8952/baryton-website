@@ -75,7 +75,7 @@ async function bausteinUmwandeln(b: Record<string, unknown>) {
   for (const k of ["knopf", "zweiterKnopf", "weiterLink"]) if (k in b) kopie[k] = link(b[k]);
   if (b._type === "spaltenBaustein") kopie.spalten = ((b.spalten as Record<string, unknown>[]) ?? []).map((sp) => ({ _type: "spalte", ...sp }));
   if (b._type === "faktenBaustein") kopie.fakten = ((b.fakten as Record<string, unknown>[]) ?? []).map((f) => ({ _type: "faktum", ...f }));
-  if (b._type === "karteBaustein") kopie.kategorien = ((b.kategorien as string[] | undefined) ?? []).map((id) => ref(id, id));
+  if (b._type === "karteBaustein" || b._type === "speisenBaustein") kopie.kategorien = ((b.kategorien as string[] | undefined) ?? []).map((id) => ref(id, id));
   if (b._type === "bildBaustein") kopie.bild = await bild(b.bild as BildRef);
   if (b._type === "rechtstextBaustein") kopie.rechtstext = ref(`rechtstext-${b.rechtstext as string}`);
   return kopie;
@@ -102,9 +102,31 @@ dokumente.push({
 for (const k of await json<Record<string, unknown>[]>("getraenkekategorien.json")) {
   dokumente.push({ ...k, _id: k.id as string, _type: "getraenkekategorie", id: undefined });
 }
-// Getränke (Kategorie wird zur Referenz)
+// Getränke (Kategorie wird zur Referenz, Preisvarianten bekommen _type)
 for (const g of await json<Record<string, unknown>[]>("getraenke.json")) {
-  dokumente.push({ ...g, _id: g.id as string, _type: "getraenk", id: undefined, kategorie: ref(g.kategorie as string) });
+  dokumente.push({
+    ...g,
+    _id: g.id as string,
+    _type: "getraenk",
+    id: undefined,
+    kategorie: ref(g.kategorie as string),
+    varianten: (g.varianten as Record<string, unknown>[] | undefined)?.map((v) => ({ _type: "preisvariante", ...v })),
+  });
+}
+// Speisekategorien
+for (const k of await json<Record<string, unknown>[]>("speisekategorien.json")) {
+  dokumente.push({ ...k, _id: k.id as string, _type: "speisekategorie", id: undefined });
+}
+// Speisen (gleiches Muster wie Getränke)
+for (const sp of await json<Record<string, unknown>[]>("speisen.json")) {
+  dokumente.push({
+    ...sp,
+    _id: sp.id as string,
+    _type: "speise",
+    id: undefined,
+    kategorie: ref(sp.kategorie as string),
+    varianten: (sp.varianten as Record<string, unknown>[] | undefined)?.map((v) => ({ _type: "preisvariante", ...v })),
+  });
 }
 // Abweichende Öffnungszeiten (stehen in einstellungen.json)
 for (const s of ((e.sonderoeffnungszeiten as Record<string, unknown>[]) ?? [])) {

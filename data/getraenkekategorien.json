@@ -1,1 +1,6 @@
-[]
+[
+  { "id": "kat-saisonal", "titel": "Saisonal", "beschreibung": "Nur zeitweise erhältlich.", "reihenfolge": 1 },
+  { "id": "kat-bier", "titel": "Bier", "reihenfolge": 2 },
+  { "id": "kat-aperitif", "titel": "Aperitif", "reihenfolge": 3 },
+  { "id": "kat-klassiker", "titel": "Klassiker", "beschreibung": "Namen laut Bar-Tafel bestätigt. Preise auf dem Originalfoto nicht vollständig lesbar – bitte beim Personal erfragen.", "reihenfolge": 4 }
+]

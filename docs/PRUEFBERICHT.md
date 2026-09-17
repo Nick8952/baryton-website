@@ -13,13 +13,24 @@ Alle laufen auch im GitHub-Actions-Workflow:
 
 | Prüfung | Ergebnis |
 |---|---|
-| `npm run inhalt:pruefen` | ✓ 5 Seiten, 0 Getränkekategorien, 0 Getränke, 8 interne Links |
+| `npm run inhalt:pruefen` | ✓ 7 Seiten, 4 Getränkekategorien, 12 Getränke, 6 Speisekategorien, 31 Speisen, 14 interne Links |
 | `npm run oeffnung:pruefen` | ✓ 20 von 20 Grenzfällen bestanden |
 | `npm run lint` | ✓ keine Meldungen |
 | `npm run typecheck` | ✓ keine Fehler |
-| `npm run build:pages` | ✓ 8 Seiten erzeugt |
-| `npm run export:pruefen` | ✓ 8 HTML- und 1 CSS-Datei, 221 interne Verweise korrekt unter dem Unterpfad, keine externen Ressourcen, `noindex` auf allen Seiten |
-| `npm run seed -- --probe` | ✓ 8 Dokumente, keine doppelten IDs (schreibt nichts) |
+| `npm run build:pages` | ✓ 10 Seiten erzeugt |
+| `npm run export:pruefen` | ✓ 10 HTML- und 1 CSS-Datei, 372 interne Verweise korrekt unter dem Unterpfad, keine externen Ressourcen, `noindex` auf allen Seiten |
+| `npm run seed -- --probe` | ✓ 55 Dokumente, keine doppelten IDs (schreibt nichts) |
+
+**Nachtrag 17.09.2026:** Getränke- und Speisekarte um einen fotografisch belegten
+Ausschnitt erweitert (Bier mit Preisvarianten für 5 dl/1 Liter, Aperitif, Salate,
+Burger, Flammkuchen, 16 Pizzen mit Standard-/Medium-/Family-Preisen). Dafür das
+Inhaltsmodell um `Speise`/`Speisekategorie` sowie `Preisvariante` erweitert
+(Getränke und Speisen können jetzt mehrere Grössen mit je eigenem Preis haben,
+z. B. Bier oder Pizza) und an allen acht Stellen nachgezogen (Typen, lokaler und
+Sanity-Provider, Sanity-Schemas, Studio-Struktur, Inhaltsprüfung, Importskript,
+Komponenten). Alle sechs Prüfungen anschliessend erneut grün; Getränke-Seite bei
+1440 und 390 px ohne horizontalen Überlauf geprüft, Preisvarianten stapeln sich
+lesbar untereinander statt in einer Zeile.
 
 ## Öffnungszeiten-Logik
 

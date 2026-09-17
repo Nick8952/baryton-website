@@ -7,11 +7,17 @@ import { woche } from "@/lib/oeffnung";
  * es ist also dasselbe Motiv wie in der Wochengrafik, nur als Atmosphäre.
  * Rein dekorativ und darum für Screenreader ausgeblendet.
  */
+// Die mittlere Saite (Index 3 von 7) liegt genau auf halber Höhe – dort, wo der
+// Schriftzug im Hero sitzt. Sie würde quer durch den Text laufen und wird deshalb
+// ausgelassen; die übrigen sechs Saiten bleiben als Rahmen darüber und darunter.
+const AUSGELASSENER_INDEX = 3;
+
 export function Saiten({ zeiten }: { zeiten: Oeffnungszeit[] }) {
   const { zeilen } = woche(zeiten);
   return (
     <svg className="saiten" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
       {zeilen.map((zeile, i) => {
+        if (i === AUSGELASSENER_INDEX) return null;
         const y = 8 + i * 14;
         return (
           <g key={zeile.wochentag}>

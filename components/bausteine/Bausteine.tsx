@@ -3,6 +3,7 @@ import { RichText } from "../RichText";
 import { SmartLink } from "../SmartLink";
 import { Woche } from "../Woche";
 import { Karte } from "../Karte";
+import { Speisen } from "../Speisen";
 import { Kontakt } from "../Kontakt";
 import { Bild } from "../Bild";
 
@@ -57,6 +58,23 @@ function EinBaustein({ baustein: b, einstellungen: e }: { baustein: Baustein; ei
           <div className="bahn">
             <Kopf kurzzeile={b.kurzzeile} titel={b.titel} einleitung={b.einleitung} />
             <Karte baustein={b} />
+            {b.weiterLink ? (
+              <p style={{ marginTop: "1.5rem" }}>
+                <SmartLink ziel={b.weiterLink.ziel} className="textlink frei">
+                  {b.weiterLink.titel}
+                </SmartLink>
+              </p>
+            ) : null}
+          </div>
+        </section>
+      );
+
+    case "speisenBaustein":
+      return (
+        <section className="abschnitt reveal">
+          <div className="bahn">
+            <Kopf kurzzeile={b.kurzzeile} titel={b.titel} einleitung={b.einleitung} />
+            <Speisen baustein={b} />
             {b.weiterLink ? (
               <p style={{ marginTop: "1.5rem" }}>
                 <SmartLink ziel={b.weiterLink.ziel} className="textlink frei">

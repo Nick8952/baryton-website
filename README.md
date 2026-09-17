@@ -46,6 +46,8 @@ npm run lint && npm run typecheck
 - **Ein Bild, keine Fotos.** Verwendet wird nur eine per KI nach dem Leuchtschild
   nachgezeichnete Wortmarke; sie ist nicht das Originallogo des Betriebs. Fotos von
   Räumen, Personen, Getränken oder Speisen sind weiterhin nicht enthalten.
-- **Keine erfundene Getränkekarte.** Der Bereich ist gestaltet und im Inhaltsmodell
-  vollständig angelegt, zeigt aber einen Hinweis statt ausgedachter Produkte.
+- **Getränke- und Speisekarte: fotografisch belegter Ausschnitt, nicht erfunden.**
+  Bier, Aperitif, ein paar Klassiker-Cocktailnamen, Salate, Burger, Flammkuchen und
+  Pizza stammen von Fotos der Karte im Lokal (siehe `docs/QUELLEN.md`). Fehlt für
+  einen Bereich jedes Foto, erscheint ein Hinweis statt ausgedachter Produkte.
 - **Alle Seiten tragen `noindex`**, solange `INDEXIERUNG` nicht gesetzt ist.

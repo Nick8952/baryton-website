@@ -1,0 +1,310 @@
+[
+  {
+    "id": "sp-caesar-salad-bowl",
+    "name": "Caesar Salad Bowl",
+    "beschreibung": "Eisbergsalat, gebratene Speckwürfel, Parmesan, Brot-Croûtons.",
+    "preis": 18.5,
+    "kategorie": "sp-kat-salate",
+    "reihenfolge": 1
+  },
+  {
+    "id": "sp-royal-salad-bowl",
+    "name": "Royal Salad Bowl",
+    "beschreibung": "Eisbergsalat, gebratene Pouletbruststreifen, gebratene Speckwürfel, Tomatenwürfel, Parmesan, Brot-Croûtons.",
+    "preis": 23.8,
+    "kategorie": "sp-kat-salate",
+    "reihenfolge": 2
+  },
+  {
+    "id": "sp-sams-burger",
+    "name": "Sam's Burger",
+    "beschreibung": "Saftiger Rindfleischburger mit Cheddar Cheese, Zwiebeln, Cole-Slaw-Salat, Gurken, Sam's Spezialsauce.",
+    "preis": 23.5,
+    "kategorie": "sp-kat-burger",
+    "reihenfolge": 1
+  },
+  {
+    "id": "sp-cheese-burger",
+    "name": "Cheese Burger",
+    "beschreibung": "Saftiger Rindfleischburger mit Cheddar Cheese, Zwiebeln, Gurken, Ketchup, Senf.",
+    "preis": 24,
+    "kategorie": "sp-kat-burger",
+    "reihenfolge": 2
+  },
+  {
+    "id": "sp-baryton-burger",
+    "name": "Baryton Burger",
+    "beschreibung": "Saftiger Rindfleischburger mit Speck, Zwiebeln, Tomaten, Gurken, Hot Barbecuesauce.",
+    "preis": 24.5,
+    "kategorie": "sp-kat-burger",
+    "reihenfolge": 3
+  },
+  {
+    "id": "sp-chicken-wings-salat",
+    "name": "Chicken Wings mit Salat",
+    "beschreibung": "5 Pouletflügel würzig mariniert, mit buntem Salat garniert.",
+    "preis": 19.8,
+    "kategorie": "sp-kat-verschiedenes",
+    "reihenfolge": 1
+  },
+  {
+    "id": "sp-chicken-wings",
+    "name": "Chicken Wings",
+    "beschreibung": "5 Pouletflügel würzig mariniert mit Hot Barbecuesauce.",
+    "preis": 14.5,
+    "kategorie": "sp-kat-verschiedenes",
+    "reihenfolge": 2
+  },
+  {
+    "id": "sp-kartoffel-wedges",
+    "name": "Portion Kartoffel-Wedges",
+    "beschreibung": "Country-Style, serviert mit Hot Barbecuesauce.",
+    "preis": 10.5,
+    "kategorie": "sp-kat-verschiedenes",
+    "reihenfolge": 3
+  },
+  {
+    "id": "sp-paula-pizza-style",
+    "name": "Paula Pizza Style",
+    "beschreibung": "Tomatensauce, Mozzarella, Lauch, Champignons, Chili, mariniertes Poulet.",
+    "preis": 23.5,
+    "kategorie": "sp-kat-flammkuchen",
+    "reihenfolge": 1
+  },
+  {
+    "id": "sp-rasto-original-style",
+    "name": "Rasto Original Style",
+    "beschreibung": "Crème Fraîche, Cheddar-Käse, scharfe Salami, Zwiebeln.",
+    "preis": 23.5,
+    "kategorie": "sp-kat-flammkuchen",
+    "reihenfolge": 2
+  },
+  {
+    "id": "sp-rocky-mountain",
+    "name": "Rocky Mountain",
+    "beschreibung": "Crème Fraîche, Lauch, Speckwürfel.",
+    "preis": 23.5,
+    "kategorie": "sp-kat-flammkuchen",
+    "reihenfolge": 3
+  },
+  {
+    "id": "sp-pizza-alabama",
+    "name": "Alabama",
+    "beschreibung": "Tomatensauce, Mozzarella.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 17.3 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 25.8 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 35 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 1
+  },
+  {
+    "id": "sp-pizza-chicago",
+    "name": "Chicago",
+    "beschreibung": "Tomatensauce, Mozzarella, Tomaten.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 17.9 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 26.8 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 36.5 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 2
+  },
+  {
+    "id": "sp-pizza-houston",
+    "name": "Houston",
+    "beschreibung": "Tomatensauce, Mozzarella, Champignons, Petersilie.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 18.4 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 27.6 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 37.1 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 3
+  },
+  {
+    "id": "sp-pizza-california",
+    "name": "California",
+    "beschreibung": "Tomatensauce, Mozzarella, rote & gelbe Peperoni, Peperoncini.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 18.4 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 27.6 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 37.1 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 4
+  },
+  {
+    "id": "sp-pizza-washington",
+    "name": "Washington",
+    "beschreibung": "Tomatensauce, Mozzarella, schwarze Oliven, Broccoli, Knoblauch.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 20.2 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 30.6 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 41.3 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 5
+  },
+  {
+    "id": "sp-pizza-memphis",
+    "name": "Memphis",
+    "beschreibung": "Tomatensauce, Mozzarella, Auberginen, Lauch, Champignons, rote & gelbe Peperoni.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 21.7 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 32.9 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 44.8 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 6
+  },
+  {
+    "id": "sp-pizza-montana",
+    "name": "Montana",
+    "beschreibung": "Tomatensauce, Mozzarella, Gorgonzola, Bergkäse.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 21.3 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 32.4 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 43.9 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 7
+  },
+  {
+    "id": "sp-pizza-mississippi",
+    "name": "Mississippi",
+    "beschreibung": "Tomatensauce, Mozzarella, Thon, schwarze & grüne Oliven, Zwiebeln.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 19.4 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 29.3 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 39.4 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 8
+  },
+  {
+    "id": "sp-pizza-nebraska",
+    "name": "Nebraska",
+    "beschreibung": "Tomatensauce, Mozzarella, Vorderschinken.",
+    "hinweis": "Family-Preis auf dem Originalfoto nicht lesbar",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 19 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 28.6 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 9
+  },
+  {
+    "id": "sp-pizza-wyoming",
+    "name": "Wyoming",
+    "beschreibung": "Tomatensauce, Mozzarella, Vorderschinken, Champignons.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 20.5 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 30.9 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 42 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 10
+  },
+  {
+    "id": "sp-pizza-salt-lake-city",
+    "name": "Salt Lake City",
+    "beschreibung": "Tomatensauce, Mozzarella, Speck, Zwiebeln, Knoblauch, schwarze Oliven.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 21.4 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 32.6 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 44.1 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 11
+  },
+  {
+    "id": "sp-pizza-new-mexico",
+    "name": "New Mexico",
+    "beschreibung": "Tomatensauce, Mozzarella, Speck, Zwiebeln, Peperoncini.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 20.4 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 30.9 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 41.8 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 12
+  },
+  {
+    "id": "sp-pizza-boston",
+    "name": "Boston",
+    "beschreibung": "Tomatensauce, Mozzarella, Speck, Vorderschinken, Ei.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 21.7 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 32.9 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 44.8 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 13
+  },
+  {
+    "id": "sp-pizza-hawaii",
+    "name": "Hawaii",
+    "beschreibung": "Tomatensauce, Mozzarella, Vorderschinken, Ananas.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 20.9 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 31.8 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 42.9 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 14
+  },
+  {
+    "id": "sp-pizza-missouri",
+    "name": "Missouri",
+    "beschreibung": "Tomatensauce, Mozzarella, Salami.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 19 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 28.6 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 38.5 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 15
+  },
+  {
+    "id": "sp-pizza-los-angeles",
+    "name": "Los Angeles",
+    "beschreibung": "Tomatensauce, Mozzarella, Rohschinken, Speck, schwarze Oliven, Knoblauch.",
+    "varianten": [
+      { "_key": "v1", "bezeichnung": "Standard", "preis": 22.5 },
+      { "_key": "v2", "bezeichnung": "Medium", "preis": 34.4 },
+      { "_key": "v3", "bezeichnung": "Family", "preis": 46.7 }
+    ],
+    "kategorie": "sp-kat-pizza",
+    "reihenfolge": 16
+  },
+  {
+    "id": "sp-rindstatar",
+    "name": "Rindstatar",
+    "hinweis": "Preis auf der Tafel nicht angegeben",
+    "kategorie": "sp-kat-weitere",
+    "reihenfolge": 1
+  },
+  {
+    "id": "sp-schinken-kaese-toast",
+    "name": "Schinken-Käse-Toast",
+    "hinweis": "Preis auf der Tafel nicht angegeben",
+    "kategorie": "sp-kat-weitere",
+    "reihenfolge": 2
+  },
+  {
+    "id": "sp-gemischte-plaettli",
+    "name": "Gemischte Plättli",
+    "hinweis": "Preis auf der Tafel nicht angegeben",
+    "kategorie": "sp-kat-weitere",
+    "reihenfolge": 3
+  },
+  {
+    "id": "sp-tomatensuppe",
+    "name": "Tomatensuppe",
+    "hinweis": "Preis auf der Tafel nicht angegeben",
+    "kategorie": "sp-kat-weitere",
+    "reihenfolge": 4
+  }
+]

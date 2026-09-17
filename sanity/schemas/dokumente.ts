@@ -1,6 +1,24 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
 import { bausteinMitglieder } from "./bausteine";
 
+/** Gemeinsame Felder für Getränk und Speise – ein Eintrag hat entweder einen Preis oder Grössenvarianten, nie beides. */
+const varianteFelder = [
+  defineField({
+    name: "preis",
+    title: "Preis in Franken",
+    type: "number",
+    description: "Nur ausfüllen, wenn es EINEN Preis gibt. Bei mehreren Grössen stattdessen unten «Preisvarianten» verwenden.",
+    validation: (r) => r.min(0).max(1000).precision(2),
+  }),
+  defineField({
+    name: "varianten",
+    title: "Preisvarianten (mehrere Grössen)",
+    type: "array",
+    of: [defineArrayMember({ type: "preisvariante" })],
+    description: "Nur ausfüllen, wenn es mehrere Grössen mit eigenem Preis gibt, z. B. Standard/Medium/Family oder Glas/Flasche. Sonst leer lassen und oben «Preis» verwenden.",
+  }),
+];
+
 const RESERVIERTE_SLUGS = ["studio", "api", "images", "fonts", "_next", "start"];
 // "lounge" ist ein regulärer, frei vergebener Slug – keine Sonderbehandlung nötig.
 
@@ -185,16 +203,41 @@ export const getraenkTyp = defineType({
   fields: [
     defineField({ name: "name", title: "Bezeichnung", type: "string", validation: (r) => r.required() }),
     defineField({ name: "beschreibung", title: "Beschreibung", type: "text", rows: 2, description: "Zutaten oder ein kurzer Satz. Optional.", validation: (r) => r.max(220) }),
-    defineField({
-      name: "preis",
-      title: "Preis in Franken",
-      type: "number",
-      description: "Nur die Zahl, z. B. 18 oder 18.5. Leer lassen, wenn kein fixer Preis gilt.",
-      validation: (r) => r.min(0).max(1000).precision(2),
-    }),
-    defineField({ name: "menge", title: "Menge", type: "string", description: "z. B. «4 cl» oder «3 dl». Optional." }),
-    defineField({ name: "hinweis", title: "Hinweis", type: "string", description: "Kurzer Zusatz, z. B. «alkoholfrei». Optional.", validation: (r) => r.max(40) }),
+    ...varianteFelder,
+    defineField({ name: "menge", title: "Menge", type: "string", description: "z. B. «4 cl» oder «3 dl». Nur bei einem einzigen Preis sinnvoll, nicht zusammen mit Preisvarianten." }),
+    defineField({ name: "hinweis", title: "Hinweis", type: "string", description: "Kurzer Zusatz, z. B. «alkoholfrei» oder «neu im Sortiment». Optional.", validation: (r) => r.max(60) }),
     defineField({ name: "kategorie", title: "Kategorie", type: "reference", to: [{ type: "getraenkekategorie" }], validation: (r) => r.required() }),
+    defineField({ name: "reihenfolge", title: "Reihenfolge", type: "number", description: "Reihenfolge innerhalb der Kategorie.", validation: (r) => r.required().integer() }),
+  ],
+  orderings: [{ title: "Reihenfolge", name: "reihenfolge", by: [{ field: "reihenfolge", direction: "asc" }] }],
+  preview: { select: { title: "name", subtitle: "kategorie.titel" } },
+});
+
+export const speisekategorieTyp = defineType({
+  name: "speisekategorie",
+  title: "Speisekategorie",
+  type: "document",
+  description: "Ein Abschnitt der Speisekarte, z. B. «Pizza» oder «Burger».",
+  fields: [
+    defineField({ name: "titel", title: "Titel", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "beschreibung", title: "Beschreibung", type: "text", rows: 2, description: "Optionaler Satz unter dem Kategorietitel, z. B. Hinweis auf Beilagen.", validation: (r) => r.max(200) }),
+    defineField({ name: "reihenfolge", title: "Reihenfolge", type: "number", description: "Kleinere Zahl steht weiter oben.", validation: (r) => r.required().integer() }),
+  ],
+  orderings: [{ title: "Reihenfolge", name: "reihenfolge", by: [{ field: "reihenfolge", direction: "asc" }] }],
+  preview: { select: { title: "titel", subtitle: "beschreibung" } },
+});
+
+export const speiseTyp = defineType({
+  name: "speise",
+  title: "Speise",
+  type: "document",
+  description: "Ein Eintrag der Speisekarte. Nur eintragen, was der Betrieb tatsächlich führt – nichts schätzen.",
+  fields: [
+    defineField({ name: "name", title: "Bezeichnung", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "beschreibung", title: "Beschreibung", type: "text", rows: 2, description: "Zutaten oder ein kurzer Satz. Optional.", validation: (r) => r.max(220) }),
+    ...varianteFelder,
+    defineField({ name: "hinweis", title: "Hinweis", type: "string", description: "Kurzer Zusatz. Optional.", validation: (r) => r.max(60) }),
+    defineField({ name: "kategorie", title: "Kategorie", type: "reference", to: [{ type: "speisekategorie" }], validation: (r) => r.required() }),
     defineField({ name: "reihenfolge", title: "Reihenfolge", type: "number", description: "Reihenfolge innerhalb der Kategorie.", validation: (r) => r.required().integer() }),
   ],
   orderings: [{ title: "Reihenfolge", name: "reihenfolge", by: [{ field: "reihenfolge", direction: "asc" }] }],

@@ -1,10 +1,10 @@
 {
   "id": "seite-getraenke",
   "slug": "getraenke",
-  "titel": "Getränke",
-  "einleitung": "Belegt ist bisher eines: Am Lokal wirbt die Lounge mit Appenzeller Bier. Eine vollständige Karte liegt für diese Vorschau nicht vor.",
-  "seoTitel": "Getränke",
-  "seoBeschreibung": "Getränkebereich der Baryton Cocktail Lounge, Schweizergasse 8, Zürich. Appenzeller Bier ist am Lokal ausgeschildert; die Karte wird ergänzt, sobald sie vorliegt.",
+  "titel": "Getränke & Speisen",
+  "einleitung": "Auszüge aus der Karte im Lokal, fotografisch belegt am 17. September 2026. Nicht abschliessend – Bezeichnungen, Preise und Verfügbarkeit können sich seither geändert haben.",
+  "seoTitel": "Getränke & Speisen",
+  "seoBeschreibung": "Auszug aus der Getränke- und Speisekarte der Baryton Cocktail Lounge, Schweizergasse 8, Zürich: Bier, Aperitif, Salate, Burger und Pizza.",
   "bausteine": [
     {
       "_type": "faktenBaustein",
@@ -33,8 +33,17 @@
       "_type": "karteBaustein",
       "_key": "getraenke-karte",
       "kurzzeile": "Karte",
-      "titel": "Die vollständige Auswahl",
-      "hinweis": "Sobald die Karte des Betriebs vorliegt, erscheint sie an dieser Stelle – mit Bezeichnungen, Mengen und Preisen genau so, wie der Betrieb sie führt."
+      "titel": "Getränke",
+      "einleitung": "Fotografisch belegter Ausschnitt: Saison-Glühwein, Bier, Aperitif und einige Klassiker. Die vollständige Cocktailkarte liegt nicht vor.",
+      "hinweis": "Sobald eine vollständige Karte des Betriebs vorliegt, erscheint sie an dieser Stelle – mit Bezeichnungen, Mengen und Preisen genau so, wie der Betrieb sie führt."
+    },
+    {
+      "_type": "speisenBaustein",
+      "_key": "getraenke-speisen",
+      "kurzzeile": "Karte",
+      "titel": "Speisen",
+      "einleitung": "Ebenfalls fotografisch belegt: die gedruckte Salat-, Burger- und Pizzakarte sowie einzelne Gerichte von einer Kreidetafel im Lokal.",
+      "hinweis": "Sobald eine vollständige Speisekarte des Betriebs vorliegt, erscheint sie an dieser Stelle."
     },
     {
       "_type": "textBaustein",
@@ -52,7 +61,7 @@
             {
               "_type": "span",
               "_key": "8483b220a43e",
-              "text": "Die Darstellung steht bereits: Kategorien, Getränke, Mengenangaben, Preise und kurze Hinweise wie «alkoholfrei» sind im Inhaltsmodell angelegt.",
+              "text": "Die Einträge oben stammen von Fotos der Karte im Lokal, nicht von einem angebundenen System – sie werden nicht automatisch aktuell gehalten.",
               "marks": []
             }
           ],
@@ -80,7 +89,7 @@
             {
               "_type": "span",
               "_key": "10ddee8a7849",
-              "text": "Bis eine belegte Karte vorliegt, bleibt der Bereich leer.",
+              "text": "Für verbindliche Preise und die aktuelle Verfügbarkeit gilt allein die Auskunft des Betriebs.",
               "marks": []
             }
           ],
@@ -92,7 +101,7 @@
       "_type": "aufrufBaustein",
       "_key": "getraenke-aufruf",
       "titel": "Fragen zur Karte",
-      "text": "Eine vollständige Getränkekarte und Preise sind für diese Vorschau nicht belegt.",
+      "text": "Für verbindliche Preise, Tagesangebote und die aktuelle Verfügbarkeit gilt allein die Auskunft des Betriebs.",
       "knopf": {
         "titel": "Anrufen",
         "ziel": "tel:+41433448030"

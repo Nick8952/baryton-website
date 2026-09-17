@@ -2,8 +2,8 @@
  * Prüft die lokalen Inhaltsdateien (data/) auf Vollständigkeit – läuft ohne Sanity.
  *   npm run inhalt:pruefen
  * Meldet fehlende Bilder, fehlende Alt-Texte, doppelte Slugs/_keys, unbekannte Bausteine,
- * unbekannte Kategorie-IDs, unsaubere Öffnungszeiten, fehlende Rechtstexte und interne
- * Links auf nicht vorhandene Seiten.
+ * unbekannte Kategorie-IDs, unsaubere Preise/Preisvarianten, unsaubere Öffnungszeiten,
+ * fehlende Rechtstexte und interne Links auf nicht vorhandene Seiten.
  */
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
@@ -13,7 +13,18 @@ const json = async <T,>(p: string): Promise<T> => JSON.parse(await readFile(path
 const fehler: string[] = [];
 // Die Demo kommt ohne Fotos aus – ohne Bildverzeichnis sind schlicht keine Bilder referenzierbar.
 const bilder = await json<Record<string, unknown>>("bilder.json").catch(() => ({}) as Record<string, unknown>);
-const BAUSTEINE = new Set(["textBaustein", "karteBaustein", "oeffnungszeitenBaustein", "faktenBaustein", "spaltenBaustein", "bildBaustein", "kontaktBaustein", "aufrufBaustein", "rechtstextBaustein"]);
+const BAUSTEINE = new Set([
+  "textBaustein",
+  "karteBaustein",
+  "speisenBaustein",
+  "oeffnungszeitenBaustein",
+  "faktenBaustein",
+  "spaltenBaustein",
+  "bildBaustein",
+  "kontaktBaustein",
+  "aufrufBaustein",
+  "rechtstextBaustein",
+]);
 const WOCHENTAGE = new Set(["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]);
 // Gleiche Regel wie lib/assets.ts#istErlaubtesLinkziel
 const linkErlaubt = (z: string) => /^\/(?!\/)/.test(z) || /^(https?:\/\/[^\s]+|mailto:[^\s]+|tel:\+?[\d\s()-]+)$/.test(z);
@@ -24,36 +35,85 @@ function bildPruefen(ref: { bild?: string; alt?: string } | undefined, ort: stri
   if (typeof ref.alt !== "string") fehler.push(`${ort}: Alt-Text fehlt`);
 }
 
-const kategorien = await json<{ id: string; titel: string; reihenfolge: number }[]>("getraenkekategorien.json");
-const kategorieIds = new Set<string>();
-for (const k of kategorien) {
-  if (!k.id) fehler.push(`Getränkekategorie ohne ID: ${JSON.stringify(k.titel ?? "?")}`);
-  else if (kategorieIds.has(k.id)) fehler.push(`Getränkekategorie ${k.id}: doppelte ID`);
-  if (k.id) kategorieIds.add(k.id);
-  if (!k.titel) fehler.push(`Getränkekategorie ${k.id ?? "?"}: Titel fehlt`);
-  if (!Number.isInteger(k.reihenfolge)) fehler.push(`Getränkekategorie ${k.id ?? "?"}: Reihenfolge fehlt oder keine Ganzzahl`);
+interface Kategorie {
+  id: string;
+  titel: string;
+  reihenfolge: number;
+}
+interface Eintrag {
+  id: string;
+  name: string;
+  preis?: unknown;
+  varianten?: { _key?: string; bezeichnung?: string; preis?: unknown }[];
+  menge?: unknown;
+  kategorie: string;
+  reihenfolge: number;
 }
 
-const getraenke = await json<{ id: string; name: string; preis?: unknown; kategorie: string; reihenfolge: number }[]>("getraenke.json");
-const getraenkIds = new Set<string>();
-for (const g of getraenke) {
-  const kennung = g.id || "(ohne ID)";
-  if (!g.id) fehler.push(`Getränk ohne ID: ${JSON.stringify(g.name ?? "?")}`);
-  else if (getraenkIds.has(g.id)) fehler.push(`Getränk ${g.id}: doppelte ID`);
-  if (g.id) getraenkIds.add(g.id);
-  if (!g.name) fehler.push(`Getränk ${kennung}: Bezeichnung fehlt`);
-  if (!kategorieIds.has(g.kategorie)) fehler.push(`Getränk ${kennung}: Kategorie «${g.kategorie}» existiert nicht`);
-  // Ein Preis muss eine Zahl sein – ein Text wie «18.–» würde in der Darstellung falsch gerundet.
-  if (g.preis !== undefined) {
-    if (typeof g.preis !== "number" || !Number.isFinite(g.preis) || g.preis < 0) {
-      fehler.push(`Getränk ${kennung}: Preis muss eine Zahl in Franken sein (z. B. 18 oder 18.5)`);
-    } else if (Math.round(g.preis * 100) !== g.preis * 100) {
-      // Mehr als zwei Nachkommastellen würde die Anzeige still runden.
-      fehler.push(`Getränk ${kennung}: Preis mit höchstens zwei Nachkommastellen angeben`);
-    }
+/** Prüft eine Preis-Angabe: höchstens zwei Nachkommastellen, keine negativen Werte. */
+function preisPruefen(preis: unknown, ort: string) {
+  if (preis === undefined) return;
+  if (typeof preis !== "number" || !Number.isFinite(preis) || preis < 0) {
+    fehler.push(`${ort}: Preis muss eine Zahl in Franken sein (z. B. 18 oder 18.5)`);
+  } else if (Math.abs(Math.round(preis * 100) - preis * 100) > 1e-6) {
+    // Mehr als zwei Nachkommastellen würde die Anzeige still runden.
+    // Grenzwert statt strikter Gleichheit, weil z. B. 17.9 * 100 als 1790.0000000000002 dargestellt wird.
+    fehler.push(`${ort}: Preis mit höchstens zwei Nachkommastellen angeben`);
   }
-  if (!Number.isInteger(g.reihenfolge)) fehler.push(`Getränk ${kennung}: Reihenfolge fehlt oder keine Ganzzahl`);
 }
+
+/** Gemeinsame Prüfung für Getränke- und Speisekategorien (gleicher Aufbau). */
+function kategorienPruefen(kategorien: Kategorie[], bezeichnung: string): Set<string> {
+  const ids = new Set<string>();
+  for (const k of kategorien) {
+    if (!k.id) fehler.push(`${bezeichnung} ohne ID: ${JSON.stringify(k.titel ?? "?")}`);
+    else if (ids.has(k.id)) fehler.push(`${bezeichnung} ${k.id}: doppelte ID`);
+    if (k.id) ids.add(k.id);
+    if (!k.titel) fehler.push(`${bezeichnung} ${k.id ?? "?"}: Titel fehlt`);
+    if (!Number.isInteger(k.reihenfolge)) fehler.push(`${bezeichnung} ${k.id ?? "?"}: Reihenfolge fehlt oder keine Ganzzahl`);
+  }
+  return ids;
+}
+
+/** Gemeinsame Prüfung für Getränke- und Speiseeinträge (gleicher Aufbau, nur der Feldname für den Namen unterscheidet sich nicht mehr – beide heissen «name»). */
+function eintraegePruefen(eintraege: Eintrag[], kategorieIds: Set<string>, bezeichnung: string): Set<string> {
+  const ids = new Set<string>();
+  for (const e of eintraege) {
+    const kennung = e.id || "(ohne ID)";
+    const ort = `${bezeichnung} ${kennung}`;
+    if (!e.id) fehler.push(`${bezeichnung} ohne ID: ${JSON.stringify(e.name ?? "?")}`);
+    else if (ids.has(e.id)) fehler.push(`${ort}: doppelte ID`);
+    if (e.id) ids.add(e.id);
+    if (!e.name) fehler.push(`${ort}: Bezeichnung fehlt`);
+    if (!kategorieIds.has(e.kategorie)) fehler.push(`${ort}: Kategorie «${e.kategorie}» existiert nicht`);
+    if (e.preis !== undefined && e.varianten?.length) {
+      fehler.push(`${ort}: «preis» und «varianten» gleichzeitig gesetzt – nur eines von beiden verwenden`);
+    }
+    preisPruefen(e.preis, ort);
+    if (e.varianten?.length) {
+      const vk = new Set<string>();
+      for (const v of e.varianten) {
+        if (!v._key || vk.has(v._key)) fehler.push(`${ort}: Varianten-_key fehlt oder doppelt`);
+        vk.add(v._key ?? "");
+        if (!v.bezeichnung) fehler.push(`${ort}: Variante ohne Bezeichnung`);
+        preisPruefen(v.preis, `${ort} (${v.bezeichnung ?? "?"})`);
+        if (v.preis === undefined) fehler.push(`${ort}: Variante «${v.bezeichnung ?? "?"}» ohne Preis`);
+      }
+    }
+    if (!Number.isInteger(e.reihenfolge)) fehler.push(`${ort}: Reihenfolge fehlt oder keine Ganzzahl`);
+  }
+  return ids;
+}
+
+const getraenkekategorien = await json<Kategorie[]>("getraenkekategorien.json");
+const getraenkekategorieIds = kategorienPruefen(getraenkekategorien, "Getränkekategorie");
+const getraenke = await json<Eintrag[]>("getraenke.json");
+eintraegePruefen(getraenke, getraenkekategorieIds, "Getränk");
+
+const speisekategorien = await json<Kategorie[]>("speisekategorien.json");
+const speisekategorieIds = kategorienPruefen(speisekategorien, "Speisekategorie");
+const speisen = await json<Eintrag[]>("speisen.json");
+eintraegePruefen(speisen, speisekategorieIds, "Speise");
 
 const seiten = (await readdir(path.join(DATA, "seiten"))).filter((f) => f.endsWith(".json"));
 const slugs = new Set<string>();
@@ -77,6 +137,20 @@ const linkPruefen = (l: unknown, ort: string) => {
 
 function richTextLinks(inhalt: unknown, ort: string) {
   for (const block of (inhalt as { markDefs?: { href?: string }[] }[]) ?? []) for (const m of block.markDefs ?? []) linkSammeln(m.href, ort);
+}
+
+/** Prüft einen Karten-Baustein (Getränke oder Speisen): Kategorien müssen existieren, sonst braucht es einen Hinweis. */
+function kartenBausteinPruefen(
+  b: Record<string, unknown>,
+  ort: string,
+  kategorieIds: Set<string>,
+  eintraege: Eintrag[],
+  eintraegeFeld: string,
+) {
+  const auswahl = (b.kategorien as string[]) ?? [];
+  for (const id of auswahl) if (!kategorieIds.has(id)) fehler.push(`${ort}: Kategorie «${id}» existiert nicht`);
+  const sichtbar = auswahl.length ? eintraege.filter((e) => auswahl.includes(e.kategorie)) : eintraege;
+  if (!sichtbar.length && !b.hinweis) fehler.push(`${ort}: keine ${eintraegeFeld} sichtbar und kein Hinweistext hinterlegt`);
 }
 
 for (const f of seiten) {
@@ -120,17 +194,10 @@ for (const f of seiten) {
         fk.add(f._key ?? "");
         if (!f.bezeichnung || !f.wert) fehler.push(`${ort}: Faktum ohne Bezeichnung/Wert`);
       }
+      if (!((b.fakten as unknown[])?.length)) fehler.push(`${ort}: keine Fakten`);
     }
-    if (b._type === "karteBaustein") {
-      for (const id of (b.kategorien as string[]) ?? []) if (!kategorieIds.has(id)) fehler.push(`${ort}: Kategorie «${id}» existiert nicht`);
-      // Ohne Getränke MUSS ein Hinweis dastehen – ein leerer Kartenbereich wäre für Gäste unverständlich.
-      const auswahl = (b.kategorien as string[]) ?? [];
-      const sichtbar = auswahl.length
-        ? getraenke.filter((g) => auswahl.includes(g.kategorie))
-        : getraenke;
-      if (!sichtbar.length && !b.hinweis) fehler.push(`${ort}: keine Getränke sichtbar und kein Hinweistext hinterlegt`);
-    }
-    if (b._type === "faktenBaustein" && !((b.fakten as unknown[])?.length)) fehler.push(`${ort}: keine Fakten`);
+    if (b._type === "karteBaustein") kartenBausteinPruefen(b, ort, getraenkekategorieIds, getraenke, "Getränke");
+    if (b._type === "speisenBaustein") kartenBausteinPruefen(b, ort, speisekategorieIds, speisen, "Speisen");
     for (const k of ["knopf", "zweiterKnopf", "weiterLink"]) linkPruefen(b[k], `${ort} › ${k}`);
     if (b._type === "rechtstextBaustein") {
       try { await readFile(path.join(DATA, `rechtstexte/${b.rechtstext}.json`)); } catch { fehler.push(`${ort}: Rechtstext «${b.rechtstext}» fehlt`); }
@@ -174,4 +241,7 @@ if (fehler.length) {
   console.error(`✗ ${fehler.length} Problem(e):\n` + fehler.map((f) => `  - ${f}`).join("\n"));
   process.exit(1);
 }
-console.log(`✓ Inhalte in Ordnung: ${seiten.length} Seiten, ${kategorien.length} Getränkekategorien, ${getraenke.length} Getränke, ${Object.keys(bilder).length} Bild(er), ${interneLinks.length} interne Links geprüft.`);
+console.log(
+  `✓ Inhalte in Ordnung: ${seiten.length} Seiten, ${getraenkekategorien.length} Getränkekategorien, ${getraenke.length} Getränke, ` +
+    `${speisekategorien.length} Speisekategorien, ${speisen.length} Speisen, ${Object.keys(bilder).length} Bild(er), ${interneLinks.length} interne Links geprüft.`,
+);

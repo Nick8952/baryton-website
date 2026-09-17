@@ -11,13 +11,19 @@ Diese Datei gilt zusätzlich zur übergeordneten `CLAUDE.md` im Ordner
 
 ## 1. Grundregeln für Inhalte
 
-**Nichts erfinden.** Die Quellenlage steht in `docs/QUELLEN.md`. Belegt sind nur:
-Name, Adresse, Telefonnummer, Kategorie «Loungebar» und die Öffnungszeiten aus dem
-Google-Unternehmensprofil (mit sichtbarem Herkunftshinweis).
+**Nichts erfinden.** Die Quellenlage steht in `docs/QUELLEN.md`. Belegt sind:
+Name, Adresse, Telefonnummer, Kategorie «Loungebar», die Öffnungszeiten aus dem
+Google-Unternehmensprofil (mit sichtbarem Herkunftshinweis) sowie ein fotografisch
+belegter **Ausschnitt** der Getränke- und Speisekarte (Bier, Aperitif, ein paar
+Klassiker-Cocktailnamen, Salate, Burger, Flammkuchen, Pizza – Details und Herkunft
+in `docs/QUELLEN.md`). Dieser Ausschnitt ist erkennbar als Fotobeleg gekennzeichnet,
+nicht als aktuelle, vollständige oder amtliche Karte.
 
 Ausdrücklich **nicht** belegt und deshalb nirgends auf der Website:
-Getränkekarte, Preise, Speisen, Veranstaltungen, Live-Musik, Terrasse, WLAN,
-Bewertungen, Betreiberangaben, Rechtsform, UID, Gründungsjahr, E-Mail-Adresse.
+Veranstaltungen, Live-Musik, Terrasse, WLAN, Bewertungen, Betreiberangaben,
+Rechtsform, UID, Gründungsjahr, E-Mail-Adresse. Auch innerhalb der Karte gilt:
+keine Preise oder Positionen ergänzen, die auf keinem Foto zu sehen sind – lieber
+ein Eintrag ohne Preis (mit `hinweis`) als ein geschätzter Preis.
 
 Wer Inhalte ergänzt, trägt die Quelle in `docs/QUELLEN.md` nach.
 

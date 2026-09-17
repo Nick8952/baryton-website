@@ -93,12 +93,16 @@
       "_type": "karteBaustein",
       "_key": "start-karte",
       "kurzzeile": "Getränke",
-      "titel": "Am Lokal ausgeschildert",
-      "hinweis": "Am Lokal wirbt die Lounge mit Appenzeller Bier. Eine vollständige Getränkekarte liegt für diese Vorschau nicht vor – damit hier nichts Erfundenes steht, bleibt der Bereich leer.",
+      "titel": "Vom Kaffee bis zum Bier",
+      "hinweis": "Am Lokal wirbt die Lounge mit Appenzeller Bier. Ein vollständiger Ausschnitt der Karte inklusive Speisen steht auf der Getränke- und Speisenseite.",
       "weiterLink": {
-        "titel": "Zum Getränkebereich",
+        "titel": "Ganze Karte ansehen",
         "ziel": "/getraenke"
-      }
+      },
+      "kategorien": [
+        "kat-saisonal",
+        "kat-bier"
+      ]
     },
     {
       "_type": "aufrufBaustein",

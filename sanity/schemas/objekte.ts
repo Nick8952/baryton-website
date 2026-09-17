@@ -18,6 +18,22 @@ export const bildTyp = defineType({
   ],
 });
 
+/**
+ * Grössen-/Preisvariante, z. B. «Standard» / «Medium» / «Family» bei Pizzen oder
+ * «Glas» / «Flasche» bei Spritz. Wird an einem Getränk oder einer Speise verwendet,
+ * wenn es dafür mehrere Preise statt eines einzigen gibt.
+ */
+export const preisvarianteTyp = defineType({
+  name: "preisvariante",
+  title: "Preisvariante",
+  type: "object",
+  fields: [
+    defineField({ name: "bezeichnung", title: "Bezeichnung", type: "string", description: "z. B. «Standard», «Medium», «Family», «Glas», «Flasche».", validation: (r) => r.required() }),
+    defineField({ name: "preis", title: "Preis in Franken", type: "number", validation: (r) => r.required().min(0).max(1000).precision(2) }),
+  ],
+  preview: { select: { title: "bezeichnung", subtitle: "preis" } },
+});
+
 export const linkTyp = defineType({
   name: "link",
   title: "Link",

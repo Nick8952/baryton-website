@@ -10,6 +10,8 @@ import type {
   Inhaltsquelle,
   Rechtstext,
   Seite,
+  Speise,
+  Speisekategorie,
 } from "./types";
 
 /**
@@ -76,6 +78,7 @@ type RohEinstellungen = Omit<Einstellungen, "seo"> & {
 };
 type RohBaustein =
   | (Omit<Extract<Baustein, { _type: "karteBaustein" }>, "kategorien" | "getraenke"> & { kategorien?: string[] })
+  | (Omit<Extract<Baustein, { _type: "speisenBaustein" }>, "kategorien" | "speisen"> & { kategorien?: string[] })
   | (Omit<Extract<Baustein, { _type: "bildBaustein" }>, "bild"> & { bild: BildReferenz })
   | (Omit<Extract<Baustein, { _type: "rechtstextBaustein" }>, "rechtstext"> & { rechtstext: Rechtstext["art"] })
   | Extract<
@@ -105,6 +108,8 @@ async function listeOderLeer<T extends { reihenfolge: number }>(datei: string): 
 
 const kategorien = () => listeOderLeer<Getraenkekategorie>("getraenkekategorien.json");
 const getraenke = () => listeOderLeer<Getraenk>("getraenke.json");
+const speisekategorien = () => listeOderLeer<Speisekategorie>("speisekategorien.json");
+const speisen = () => listeOderLeer<Speise>("speisen.json");
 
 async function rechtstext(art: Rechtstext["art"]): Promise<Rechtstext | null> {
   try {
@@ -123,6 +128,12 @@ async function baustein(roh: RohBaustein, seite: string): Promise<Baustein> {
       const auswahl = roh.kategorien?.length ? alle.filter((k) => roh.kategorien!.includes(k.id)) : alle;
       const ids = new Set(auswahl.map((k) => k.id));
       return { ...roh, kategorien: auswahl, getraenke: (await getraenke()).filter((g) => ids.has(g.kategorie)) };
+    }
+    case "speisenBaustein": {
+      const alle = await speisekategorien();
+      const auswahl = roh.kategorien?.length ? alle.filter((k) => roh.kategorien!.includes(k.id)) : alle;
+      const ids = new Set(auswahl.map((k) => k.id));
+      return { ...roh, kategorien: auswahl, speisen: (await speisen()).filter((s) => ids.has(s.kategorie)) };
     }
     case "bildBaustein": {
       const b = await bild(roh.bild, ort);
@@ -163,5 +174,7 @@ export const lokaleQuelle: Inhaltsquelle = {
 
   getGetraenkekategorien: kategorien,
   getGetraenke: getraenke,
+  getSpeisekategorien: speisekategorien,
+  getSpeisen: speisen,
   getRechtstext: rechtstext,
 };

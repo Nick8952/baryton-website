@@ -1,0 +1,8 @@
+[
+  { "id": "sp-kat-salate", "titel": "Salate", "reihenfolge": 1 },
+  { "id": "sp-kat-burger", "titel": "Burger", "beschreibung": "Serviert mit Kartoffel-Wedges Country-Style und einem kleinen Mischsalat.", "reihenfolge": 2 },
+  { "id": "sp-kat-verschiedenes", "titel": "Verschiedenes", "reihenfolge": 3 },
+  { "id": "sp-kat-flammkuchen", "titel": "Flammkuchen", "reihenfolge": 4 },
+  { "id": "sp-kat-pizza", "titel": "Pizza", "beschreibung": "Alle Pizzen in drei Grössen: Standard, Medium und Family.", "reihenfolge": 5 },
+  { "id": "sp-kat-weitere", "titel": "Weitere Klassiker", "beschreibung": "Von einer Kreidetafel im Lokal übernommen; Preise dort nicht angegeben.", "reihenfolge": 6 }
+]

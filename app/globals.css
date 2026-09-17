@@ -896,6 +896,19 @@ a.wortmarke:hover img {
   white-space: nowrap;
 }
 
+/* Mehrere Grössen (z. B. Pizza Standard/Medium/Family) stehen untereinander statt in einer Zahl. */
+.karte-eintrag .preis.varianten {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+  white-space: normal;
+  text-align: right;
+}
+
+
 .karte-eintrag .beschreibung {
   grid-column: 1 / -1;
   font-size: 0.93rem;

@@ -4,7 +4,17 @@ import { client, vorschauClient } from "@/sanity/client";
 import { sanityPruefen } from "@/sanity/env";
 import { BILD_PROJEKTION, sanityBild, type SanityBildRoh } from "@/sanity/bild";
 import { istVorschau } from "@/lib/vorschau/status";
-import type { Baustein, Einstellungen, Getraenk, Getraenkekategorie, Inhaltsquelle, Rechtstext, Seite } from "./types";
+import type {
+  Baustein,
+  Einstellungen,
+  Getraenk,
+  Getraenkekategorie,
+  Inhaltsquelle,
+  Rechtstext,
+  Seite,
+  Speise,
+  Speisekategorie,
+} from "./types";
 
 /**
  * Sanity-Inhaltsquelle (für Vercel). Liefert exakt dieselben Typen wie lib/content/local.ts.
@@ -27,7 +37,10 @@ async function abfrage<T>(query: string, params: Record<string, unknown> = {}): 
 
 const LINK = `{ titel, ziel, extern }`;
 const KATEGORIE = `{ "id": _id, titel, beschreibung, reihenfolge }`;
-const GETRAENK = `{ "id": _id, name, beschreibung, preis, menge, hinweis, "kategorie": kategorie->_id, reihenfolge }`;
+const VARIANTEN = `varianten[] { _key, bezeichnung, preis }`;
+const GETRAENK = `{ "id": _id, name, beschreibung, preis, menge, ${VARIANTEN}, hinweis, "kategorie": kategorie->_id, reihenfolge }`;
+const SPEISEKATEGORIE = `{ "id": _id, titel, beschreibung, reihenfolge }`;
+const SPEISE = `{ "id": _id, name, beschreibung, preis, ${VARIANTEN}, hinweis, "kategorie": kategorie->_id, reihenfolge }`;
 const RECHTSTEXT = `{ "id": _id, art, titel, stand, inhalt }`;
 
 const BAUSTEINE = `bausteine[] {
@@ -42,6 +55,16 @@ const BAUSTEINE = `bausteine[] {
     "getraenke": *[_type == "getraenk" && (
       coalesce(count(^.kategorien), 0) == 0 || kategorie._ref in ^.kategorien[]._ref
     )] | order(reihenfolge asc) ${GETRAENK}
+  },
+  _type == "speisenBaustein" => {
+    einleitung, hinweis, weiterLink ${LINK},
+    "kategorien": select(
+      coalesce(count(kategorien), 0) > 0 => kategorien[]-> ${SPEISEKATEGORIE},
+      *[_type == "speisekategorie"] | order(reihenfolge asc) ${SPEISEKATEGORIE}
+    ),
+    "speisen": *[_type == "speise" && (
+      coalesce(count(^.kategorien), 0) == 0 || kategorie._ref in ^.kategorien[]._ref
+    )] | order(reihenfolge asc) ${SPEISE}
   },
   _type == "oeffnungszeitenBaustein" => { einleitung, darstellung, mitSonderzeiten },
   _type == "faktenBaustein" => { fakten[] { _key, bezeichnung, wert } },
@@ -80,6 +103,14 @@ function bausteinAufbereiten(b: Roh): Baustein {
         .filter((g) => ids.has(g.kategorie))
         .sort((x, y) => x.reihenfolge - y.reihenfolge);
       return { ...(b as object), kategorien, getraenke } as Baustein;
+    }
+    case "speisenBaustein": {
+      const kategorien = ((b.kategorien as Speisekategorie[]) ?? []).sort((x, y) => x.reihenfolge - y.reihenfolge);
+      const ids = new Set(kategorien.map((k) => k.id));
+      const speisen = ((b.speisen as Speise[]) ?? [])
+        .filter((s) => ids.has(s.kategorie))
+        .sort((x, y) => x.reihenfolge - y.reihenfolge);
+      return { ...(b as object), kategorien, speisen } as Baustein;
     }
     case "faktenBaustein":
       return { ...(b as object), fakten: (b.fakten as unknown[]) ?? [] } as Baustein;
@@ -134,6 +165,14 @@ export const sanityQuelle: Inhaltsquelle = {
 
   async getGetraenke() {
     return abfrage<Getraenk[]>(`*[_type == "getraenk"] | order(reihenfolge asc) ${GETRAENK}`);
+  },
+
+  async getSpeisekategorien() {
+    return abfrage<Speisekategorie[]>(`*[_type == "speisekategorie"] | order(reihenfolge asc) ${SPEISEKATEGORIE}`);
+  },
+
+  async getSpeisen() {
+    return abfrage<Speise[]>(`*[_type == "speise"] | order(reihenfolge asc) ${SPEISE}`);
   },
 
   async getRechtstext(art) {
