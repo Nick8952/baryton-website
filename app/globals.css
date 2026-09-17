@@ -231,34 +231,23 @@ svg {
 
 /* ----------------------------------------------------------------- Wortmarke */
 
+/*
+ * Der Schriftzug liegt als freigestellte Grafik vor (weiss bzw. tintenfarben auf
+ * Transparenz), damit er auf Nacht- und auf Papierflächen ohne Kasten sitzt.
+ */
 .wortmarke {
   display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.15rem;
+  align-items: center;
   min-height: 2.75rem;
   text-decoration: none;
-  line-height: 1;
 }
 
-.wortmarke .name {
-  font-family: var(--schrift-anzeige), Georgia, serif;
-  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 36;
-  font-weight: 500;
-  font-size: 1.32rem;
-  letter-spacing: 0.06em;
+.wortmarke img {
+  transition: opacity var(--tempo) var(--kurve);
 }
 
-.wortmarke .zusatz {
-  font-size: 0.6rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--tinte-leise);
-}
-
-.fuss .wortmarke .zusatz,
-.nacht .wortmarke .zusatz {
-  color: var(--papier-leise);
+a.wortmarke:hover img {
+  opacity: 0.78;
 }
 
 /* -------------------------------------------------------------------- Knöpfe */
@@ -595,24 +584,19 @@ svg {
 }
 
 .hero-marke {
-  font-family: var(--schrift-anzeige), Georgia, serif;
-  font-weight: 400;
-  font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 144;
-  font-size: clamp(2.9rem, 12vw, 7.5rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
   margin: 0;
+  /* Die Grafik trägt den Namen – hier wird nur der Platz gehalten. */
+  line-height: 0;
 }
 
-.hero-marke .zeile2 {
-  display: block;
-  font-size: 0.34em;
-  letter-spacing: 0.22em;
+/* Die Zeile vom Leuchtschild über dem Eingang, typografisch aufgenommen. */
+.hero-schild {
+  margin: 1.4rem 0 0;
+  font-size: clamp(0.72rem, 2vw, 0.86rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 20;
-  font-weight: 500;
   color: var(--flieder);
-  margin-top: 0.9rem;
 }
 
 .hero-text {
@@ -1125,10 +1109,6 @@ svg {
 
 .fuss li {
   margin-bottom: 0.3rem;
-}
-
-.fuss .wortmarke .name {
-  color: var(--papier);
 }
 
 .fuss-unten {

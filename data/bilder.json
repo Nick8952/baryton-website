@@ -1,0 +1,34 @@
+{
+  "logo-hell": {
+    "id": "logo-hell",
+    "original": "assets/originale/logo-baryton.png",
+    "breite": 840,
+    "hoehe": 299,
+    "quellen": [
+      {
+        "breite": 420,
+        "url": "/images/logo-hell-420-c45ac2c3.webp"
+      },
+      {
+        "breite": 840,
+        "url": "/images/logo-hell-840-c5352b2e.webp"
+      }
+    ]
+  },
+  "logo-dunkel": {
+    "id": "logo-dunkel",
+    "original": "assets/originale/logo-baryton.png",
+    "breite": 840,
+    "hoehe": 299,
+    "quellen": [
+      {
+        "breite": 420,
+        "url": "/images/logo-dunkel-420-767c8577.webp"
+      },
+      {
+        "breite": 840,
+        "url": "/images/logo-dunkel-840-38ca4dd4.webp"
+      }
+    ]
+  }
+}

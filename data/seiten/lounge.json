@@ -1,0 +1,189 @@
+{
+  "id": "seite-lounge",
+  "slug": "lounge",
+  "titel": "Die Lounge",
+  "einleitung": "Was über dem Eingang steht – und was auf dieser Seite bewusst nicht steht, weil es dafür keine bestätigte Grundlage gibt.",
+  "seoTitel": "Die Lounge",
+  "seoBeschreibung": "Coffee, Lounge, Food-Break: die drei Worte auf dem Leuchtschild der Baryton Cocktail Lounge an der Schweizergasse 8 in Zürich.",
+  "bausteine": [
+    {
+      "_type": "spaltenBaustein",
+      "_key": "lounge-drei",
+      "kurzzeile": "Am Eingang",
+      "titel": "Coffee · Lounge · Food-Break",
+      "spalten": [
+        {
+          "_key": "sp-coffee",
+          "titel": "Coffee",
+          "inhalt": [
+            {
+              "_type": "block",
+              "_key": "e799f70cec15",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "36e12f9ed6a4",
+                  "text": "«Coffee» ist das erste der drei Worte auf dem Leuchtschild. Welche Kaffeeangebote es gibt, ist nicht belegt.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ]
+        },
+        {
+          "_key": "sp-lounge",
+          "titel": "Lounge",
+          "inhalt": [
+            {
+              "_type": "block",
+              "_key": "3181af13e0f9",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "e378b2ae0338",
+                  "text": "Im Google-Unternehmensprofil ist das Lokal als Loungebar geführt. Weitere Angaben zur Lounge werden hier nicht ergänzt, solange sie nicht bestätigt sind.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ]
+        },
+        {
+          "_key": "sp-food",
+          "titel": "Food-Break",
+          "inhalt": [
+            {
+              "_type": "block",
+              "_key": "0ee96f1a4a12",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "be940558ff72",
+                  "text": "«Food-Break» ist das dritte Wort auf dem Schild. Ein konkretes Speiseangebot ist nicht belegt und wird hier nicht behauptet.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "textBaustein",
+      "_key": "lounge-lage",
+      "kurzzeile": "Lage",
+      "titel": "Schweizergasse 8, 8001 Zürich",
+      "breite": "schmal",
+      "dunkel": true,
+      "inhalt": [
+        {
+          "_type": "block",
+          "_key": "effe7d699e84",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "3115411be856",
+              "text": "Die bestätigte Adresse der Lounge lautet Schweizergasse 8, 8001 Zürich.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "bacdb18a7365",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "85106fe16c8d",
+              "text": "Geöffnet ist von Dienstag bis Samstag; Sonntag und Montag bleibt die Lounge zu. Die Woche im Einzelnen steht unter ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "f39d957713b9",
+              "text": "Besuch",
+              "marks": [
+                "e83efcd7d50b"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "e61d120d3e31",
+              "text": ".",
+              "marks": []
+            }
+          ],
+          "markDefs": [
+            {
+              "_type": "link",
+              "_key": "e83efcd7d50b",
+              "href": "/besuch",
+              "extern": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "textBaustein",
+      "_key": "lounge-offen",
+      "kurzzeile": "Ehrlich gesagt",
+      "titel": "Was hier fehlt",
+      "breite": "schmal",
+      "inhalt": [
+        {
+          "_type": "block",
+          "_key": "3a3d30c8ae8d",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "92d99abb3d5c",
+              "text": "Diese Seite ist ein Gestaltungsvorschlag, kein Auftrag des Betriebs. Deshalb steht hier nur, was sich belegen liess: Adresse, Telefonnummer, Öffnungszeiten aus dem Google-Profil und die drei Worte vom Leuchtschild.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "1b686686a11b",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "d20054099acc",
+              "text": "Nicht zu finden waren eine Getränkekarte, Fotos mit geklärten Nutzungsrechten und Angaben zum Betrieb. Sobald sie vorliegen, hat diese Website den passenden Platz dafür schon vorbereitet.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "aufrufBaustein",
+      "_key": "lounge-aufruf",
+      "titel": "Selber anschauen",
+      "text": "Adresse, Telefonnummer und die derzeit veröffentlichten Öffnungszeiten stehen auf dieser Website.",
+      "knopf": {
+        "titel": "Route planen",
+        "ziel": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
+        "extern": true
+      },
+      "zweiterKnopf": {
+        "titel": "Öffnungszeiten",
+        "ziel": "/besuch"
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { defineField, defineType, defineArrayMember } from "sanity";
 import { bausteinMitglieder } from "./bausteine";
 
 const RESERVIERTE_SLUGS = ["studio", "api", "images", "fonts", "_next", "start"];
+// "lounge" ist ein regulärer, frei vergebener Slug – keine Sonderbehandlung nötig.
 
 export const einstellungenTyp = defineType({
   name: "einstellungen",

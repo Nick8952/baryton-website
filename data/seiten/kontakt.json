@@ -1,0 +1,78 @@
+{
+  "id": "seite-kontakt",
+  "slug": "kontakt",
+  "titel": "Kontakt",
+  "einleitung": "So ist die Lounge erreichbar – und was diese Website ausdrücklich nicht kann.",
+  "seoTitel": "Kontakt",
+  "seoBeschreibung": "Telefonnummer und Adresse der Baryton Cocktail Lounge, Schweizergasse 8, 8001 Zürich. Über diese Website sind keine Reservationen möglich.",
+  "bausteine": [
+    {
+      "_type": "kontaktBaustein",
+      "_key": "kontakt-haupt",
+      "kurzzeile": "Erreichbar",
+      "titel": "Direkt beim Betrieb",
+      "einleitung": "Diese Website nimmt keine Reservationen entgegen und leitet auch keine Anfragen weiter. Veröffentlicht ist die Telefonnummer 043 344 80 30.",
+      "mitFormular": false,
+      "formularHinweis": "Eine E-Mail-Adresse der Lounge liess sich nicht zuverlässig belegen. Sobald eine bestätigte Adresse vorliegt, erscheint hier zusätzlich eine vorbereitete E-Mail."
+    },
+    {
+      "_type": "textBaustein",
+      "_key": "kontakt-hinweis",
+      "kurzzeile": "Zu dieser Seite",
+      "titel": "Wer diese Vorschau verantwortet",
+      "breite": "schmal",
+      "dunkel": true,
+      "inhalt": [
+        {
+          "_type": "block",
+          "_key": "8e2136e201ad",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "c0b089b5476d",
+              "text": "Diese Website ist ein unverbindliches Gestaltungskonzept und wurde nicht von der Baryton Cocktail Lounge beauftragt. Wer sie verantwortet, steht im ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "94ae0051c7dd",
+              "text": "Impressum",
+              "marks": [
+                "58434a84040e"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "b14cce524c9b",
+              "text": ".",
+              "marks": []
+            }
+          ],
+          "markDefs": [
+            {
+              "_type": "link",
+              "_key": "58434a84040e",
+              "href": "/impressum",
+              "extern": false
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "2ed2349a2f52",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "e9e250b36d7d",
+              "text": "Ob Reservationen möglich sind und welche Angebote aktuell gelten, ist nicht bestätigt. Diese Website macht dazu bewusst keine Zusage.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}

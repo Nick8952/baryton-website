@@ -43,9 +43,9 @@ npm run lint && npm run typecheck
 - **Keine externen Verbindungen.** Schriften liegen lokal, keine Karten-Einbettung,
   kein Tracking, keine Cookies. Deshalb gibt es bewusst kein Einwilligungsbanner,
   sondern eine Datenschutzerklärung, die genau diesen Zustand beschreibt.
-- **Keine Fotos.** Für die Lounge existiert öffentlich kein Bildmaterial mit
-  geklärten Nutzungsrechten. Der Schriftzug ist eine eigene typografische Wortmarke,
-  nicht das Logo des Betriebs.
+- **Ein Bild, keine Fotos.** Verwendet wird nur eine per KI nach dem Leuchtschild
+  nachgezeichnete Wortmarke; sie ist nicht das Originallogo des Betriebs. Fotos von
+  Räumen, Personen, Getränken oder Speisen sind weiterhin nicht enthalten.
 - **Keine erfundene Getränkekarte.** Der Bereich ist gestaltet und im Inhaltsmodell
   vollständig angelegt, zeigt aber einen Hinweis statt ausgedachter Produkte.
 - **Alle Seiten tragen `noindex`**, solange `INDEXIERUNG` nicht gesetzt ist.

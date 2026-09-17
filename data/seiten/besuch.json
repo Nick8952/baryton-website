@@ -1,25 +1,18 @@
 {
   "id": "seite-besuch",
   "slug": "besuch",
-  "titel": "Besuch & Kontakt",
-  "einleitung": "Adresse, Öffnungszeiten und Telefonnummer der Baryton Cocktail Lounge.",
-  "seoTitel": "Besuch & Kontakt",
-  "seoBeschreibung": "Baryton Cocktail Lounge, Schweizergasse 8, 8001 Zürich. Öffnungszeiten, Telefonnummer und Routenlink.",
+  "titel": "Besuch",
+  "einleitung": "Öffnungszeiten und Anreise zur Schweizergasse 8.",
+  "seoTitel": "Besuch und Öffnungszeiten",
+  "seoBeschreibung": "Öffnungszeiten der Baryton Cocktail Lounge, Schweizergasse 8, 8001 Zürich, und wie man hinkommt.",
   "bausteine": [
     {
-      "_type": "kontaktBaustein",
-      "_key": "besuch-kontakt",
-      "kurzzeile": "Kontakt",
-      "titel": "Hinkommen und erreichen",
-      "einleitung": "Diese Website nimmt keine Reservationen entgegen und leitet auch keine Anfragen weiter. Der Betrieb ist direkt telefonisch erreichbar.",
-      "mitFormular": false
-    },
-    {
       "_type": "oeffnungszeitenBaustein",
-      "_key": "besuch-zeiten",
-      "kurzzeile": "Öffnungszeiten",
-      "titel": "Die Woche im Überblick",
-      "darstellung": "liste",
+      "_key": "besuch-woche",
+      "kurzzeile": "Die Woche",
+      "titel": "Wann offen ist",
+      "einleitung": "Die Länge jeder Linie entspricht der Öffnungsdauer des Tages.",
+      "darstellung": "resonanz",
       "mitSonderzeiten": true
     },
     {
@@ -31,13 +24,13 @@
       "inhalt": [
         {
           "_type": "block",
-          "_key": "4a88a2aa6080",
+          "_key": "2a784eb99ab7",
           "style": "normal",
           "children": [
             {
               "_type": "span",
-              "_key": "7930442ba0ba",
-              "text": "Die Schweizergasse liegt im Zürcher Kreis 1 und verbindet die Bahnhofstrasse mit dem Gebiet um den Hauptbahnhof.",
+              "_key": "c91df1b1d977",
+              "text": "Die Adresse der Baryton Cocktail Lounge lautet Schweizergasse 8, 8001 Zürich.",
               "marks": []
             }
           ],
@@ -72,6 +65,21 @@
           "markDefs": []
         }
       ]
+    },
+    {
+      "_type": "aufrufBaustein",
+      "_key": "besuch-aufruf",
+      "titel": "Route planen",
+      "text": "Der Link öffnet die Adresse im Kartendienst. Eine Karte wird auf dieser Seite nicht geladen.",
+      "knopf": {
+        "titel": "Route planen",
+        "ziel": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
+        "extern": true
+      },
+      "zweiterKnopf": {
+        "titel": "Kontakt",
+        "ziel": "/kontakt"
+      }
     }
   ]
 }

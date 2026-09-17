@@ -20,8 +20,9 @@ könnten – die Website wurde vollständig aus geprüften Einzelangaben aufgeba
 | Telefon 043 344 80 30 | Google-Profil; identisch bei firmen.ch, Yelp, Tripadvisor | bestätigt | Telefonlinks, Impressum, JSON-LD |
 | Kategorie «Loungebar» | Google-Profil | bestätigt | Beschreibungstexte, `BarOrPub` in JSON-LD |
 | Öffnungszeiten Di 15:30–23:00, Mi 15:30–23:00, Do 15:30–00:00, Fr 15:30–02:00, Sa 15:00–02:00, So + Mo geschlossen | Google-Profil, abgerufen 17.09.2026 | **nicht vom Betrieb bestätigt** | Wochengrafik, Footer, JSON-LD – **mit sichtbarem Herkunftshinweis auf der Website** |
-| Lage im Kreis 1 zwischen Bahnhofstrasse und Hauptbahnhof | Adresse plus Stadtplan (Plus Code 9GGQ+C8) | bestätigt | Hero-Text, Anreise-Abschnitt |
-| Profil wird vom Betrieb gepflegt | Beiträge «Vom Inhaber» und Inhaberantworten auf Rezensionen im Google-Profil | bestätigt | begründet, warum das Google-Profil als beste verfügbare Quelle gilt |
+| Wortlaut «Coffee · Lounge · Food-Break» | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026 | bestätigt | Startseite, Lounge- und Getränkeseite |
+| «Appenzeller Bier» als ausgeschildertes Bier | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026 | bestätigt | Startseite und Getränkeseite; keine Aussage über aktuelle Verfügbarkeit oder Preis |
+| Nachgezeichnete Wortmarke | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026; per KI nachgezeichnet | Freigabe von Nick für diese Vorschau | Kopfzeile, Hero und Footer; **nicht die Originaldatei oder das offizielle Logo des Betriebs** |
 
 ## Geprüft und bewusst **nicht** verwendet
 
@@ -36,7 +37,7 @@ könnten – die Website wurde vollständig aus geprüften Einzelangaben aufgeba
 | Werbetext «kleine Oase … jung, sexy, cool» | firmen.ch / zuri.net | Fremder Werbetext von 2021, Urheberschaft unklar – wird nicht kopiert. |
 | Betreiber, Rechtsform, UID, Gründungsjahr | – | Im Handelsregister nicht auffindbar. Die Zefix-Schnittstelle verlangt inzwischen eine Anmeldung; eine Suche über die offene Schnittstelle war nicht möglich. In einer Gästerezension fällt der Vorname «Willy» für den Patron – eine Rezension ist kein Beleg. |
 | Getränkekarte, Preise | – | Keine verifizierte Karte vorhanden. Der Bereich ist gestaltet und im Inhaltsmodell vollständig angelegt, zeigt aber einen ehrlichen Hinweis statt erfundener Produkte. |
-| Fotos, Logo | Google-Kartenprofil, Facebook | Google weist die Bilder selbst als möglicherweise urheberrechtlich geschützt aus; ohne Anmeldung ist nicht erkennbar, welche Fotos vom Betrieb stammen. Die Facebook-Seite `facebook.com/barytonZH` ist ohne Login nicht abrufbar, ein Instagram-Profil war nicht auffindbar. Ein Logo existiert öffentlich nicht. |
+| Fotos, Originallogo | Google-Kartenprofil, Facebook | Google weist die Bilder selbst als möglicherweise urheberrechtlich geschützt aus; ohne Anmeldung ist nicht erkennbar, welche Fotos vom Betrieb stammen. Die Facebook-Seite `facebook.com/barytonZH` ist ohne Login nicht abrufbar, ein Instagram-Profil war nicht auffindbar. Eine Originaldatei des Logos liegt nicht vor; verwendet wird nur die oben dokumentierte KI-Nachzeichnung. |
 
 ## Offene Fragen an den Betrieb
 

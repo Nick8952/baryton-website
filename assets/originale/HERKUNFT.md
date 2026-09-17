@@ -1,6 +1,11 @@
 # Herkunft der Originaldateien
 
-Dieser Ordner ist **leer**. Die Website enthält bewusst keine Fotos.
+Die Website enthält ein Bildmotiv: eine nachgezeichnete Wortmarke. Fotos von
+Innenraum, Mitarbeitenden, Gästen, Getränken oder Speisen werden nicht verwendet.
+
+| Datei | Herkunft | Bearbeitung | Freigabe | Verwendung |
+|---|---|---|---|---|
+| `logo-baryton.png` | von Nick per Foto des Leuchtschilds am Lokal bereitgestellt | per KI nachgezeichnet; **nicht das Originallogo des Betriebs** | von Nick am 17.09.2026 zur Verwendung als Wortmarken-Nachbau in dieser Vorschau freigegeben | Quelle für die hellen und dunklen WebP-Fassungen in `public/images/` |
 
 ## Warum
 
@@ -12,8 +17,9 @@ Nutzungsrechten finden (Stand 17. September 2026):
   Bilder vom Betrieb stammen und welche von Gästen.
 - Die Facebook-Seite `facebook.com/barytonZH` ist ohne Anmeldung nicht abrufbar.
 - Ein Instagram-Profil war nicht auffindbar.
-- Ein Logo existiert öffentlich nicht. Der Schriftzug auf der Website ist deshalb
-  eine eigene typografische Wortmarke und ausdrücklich nicht das Logo des Betriebs.
+- Eine Originaldatei des Logos liegt nicht vor. Die eingesetzte Wortmarke ist eine
+  KI-Nachzeichnung nach dem Leuchtschild und ausdrücklich nicht das Originallogo
+  des Betriebs.
 
 ## Wenn Bilder dazukommen
 

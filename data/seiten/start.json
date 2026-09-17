@@ -1,13 +1,14 @@
 {
   "id": "seite-start",
   "slug": "start",
-  "titel": "Loungebar an der Schweizergasse",
-  "seoTitel": "Loungebar an der Schweizergasse",
-  "seoBeschreibung": "Die Baryton Cocktail Lounge liegt an der Schweizergasse 8 im Zürcher Kreis 1. Öffnungszeiten, Adresse und Telefonnummer auf einen Blick.",
+  "titel": "Loungebar an der Schweizergasse 8",
+  "seoTitel": "Loungebar an der Schweizergasse 8",
+  "seoBeschreibung": "Die Baryton Cocktail Lounge liegt an der Schweizergasse 8 in 8001 Zürich. Öffnungszeiten, Adresse und Telefonnummer auf einen Blick.",
   "hero": {
-    "kurzzeile": "Schweizergasse 8 · Zürich Kreis 1",
+    "kurzzeile": "Schweizergasse 8 · 8001 Zürich",
     "titel": "Baryton",
-    "text": "Loungebar an der Schweizergasse 8, im Zürcher Kreis 1. Dienstag bis Samstag geöffnet.",
+    "untertitel": "Coffee · Lounge · Food-Break",
+    "text": "Loungebar an der Schweizergasse 8 in 8001 Zürich. Dienstag bis Samstag geöffnet.",
     "knopf": {
       "titel": "Route planen",
       "ziel": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
@@ -16,8 +17,7 @@
     "zweiterKnopf": {
       "titel": "Anrufen",
       "ziel": "tel:+41433448030"
-    },
-    "untertitel": "Cocktail Lounge"
+    }
   },
   "bausteine": [
     {
@@ -29,6 +29,44 @@
       "darstellung": "resonanz"
     },
     {
+      "_type": "textBaustein",
+      "_key": "start-lounge",
+      "kurzzeile": "Die Lounge",
+      "titel": "Drei Worte am Eingang",
+      "breite": "schmal",
+      "dunkel": true,
+      "inhalt": [
+        {
+          "_type": "block",
+          "_key": "db015c5115c1",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "86771140e2d4",
+              "text": "Das Leuchtschild am Lokal trägt die Worte «Coffee · Lounge · Food-Break». Sie werden hier genau so wiedergegeben.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "78379c3354dc",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "7fa024932d2e",
+              "text": "Welche Angebote und Preise aktuell gelten, ist nicht belegt und wird deshalb nicht behauptet.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
       "_type": "faktenBaustein",
       "_key": "start-fakten",
       "kurzzeile": "Auf einen Blick",
@@ -38,11 +76,6 @@
           "_key": "f1",
           "bezeichnung": "Adresse",
           "wert": "Schweizergasse 8, 8001 Zürich"
-        },
-        {
-          "_key": "f2",
-          "bezeichnung": "Quartier",
-          "wert": "Kreis 1, City"
         },
         {
           "_key": "f3",
@@ -60,8 +93,8 @@
       "_type": "karteBaustein",
       "_key": "start-karte",
       "kurzzeile": "Getränke",
-      "titel": "Die Karte",
-      "hinweis": "Für diese Vorschau liegt keine Getränkekarte vor. Damit hier nichts Erfundenes steht, bleibt der Bereich leer.",
+      "titel": "Am Lokal ausgeschildert",
+      "hinweis": "Am Lokal wirbt die Lounge mit Appenzeller Bier. Eine vollständige Getränkekarte liegt für diese Vorschau nicht vor – damit hier nichts Erfundenes steht, bleibt der Bereich leer.",
       "weiterLink": {
         "titel": "Zum Getränkebereich",
         "ziel": "/getraenke"
@@ -71,15 +104,15 @@
       "_type": "aufrufBaustein",
       "_key": "start-aufruf",
       "titel": "Vorbeikommen",
-      "text": "Die Lounge liegt an der Schweizergasse 8 im Kreis 1. Fragen beantwortet der Betrieb am Telefon.",
+      "text": "Die Lounge liegt an der Schweizergasse 8 in 8001 Zürich. Die veröffentlichte Telefonnummer steht auf der Kontaktseite.",
       "knopf": {
         "titel": "Route planen",
         "ziel": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
         "extern": true
       },
       "zweiterKnopf": {
-        "titel": "Besuch planen",
-        "ziel": "/besuch"
+        "titel": "Kontakt",
+        "ziel": "/kontakt"
       }
     }
   ]

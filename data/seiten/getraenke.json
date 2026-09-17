@@ -2,15 +2,39 @@
   "id": "seite-getraenke",
   "slug": "getraenke",
   "titel": "Getränke",
-  "einleitung": "Für diese Vorschau liegt keine Getränkekarte vor. Statt etwas auszudenken, bleibt der Bereich leer – die Darstellung dafür steht aber bereit.",
+  "einleitung": "Belegt ist bisher eines: Am Lokal wirbt die Lounge mit Appenzeller Bier. Eine vollständige Karte liegt für diese Vorschau nicht vor.",
   "seoTitel": "Getränke",
-  "seoBeschreibung": "Getränkebereich der Baryton Cocktail Lounge, Schweizergasse 8, Zürich. Die Karte wird ergänzt, sobald sie vorliegt.",
+  "seoBeschreibung": "Getränkebereich der Baryton Cocktail Lounge, Schweizergasse 8, Zürich. Appenzeller Bier ist am Lokal ausgeschildert; die Karte wird ergänzt, sobald sie vorliegt.",
   "bausteine": [
+    {
+      "_type": "faktenBaustein",
+      "_key": "getraenke-fakten",
+      "kurzzeile": "Ausgeschildert",
+      "titel": "Was am Haus steht",
+      "fakten": [
+        {
+          "_key": "g1",
+          "bezeichnung": "Bier",
+          "wert": "Appenzeller Bier"
+        },
+        {
+          "_key": "g2",
+          "bezeichnung": "Ausserdem",
+          "wert": "Coffee · Lounge · Food-Break"
+        },
+        {
+          "_key": "g3",
+          "bezeichnung": "Quelle",
+          "wert": "Leuchtschild am Lokal"
+        }
+      ]
+    },
     {
       "_type": "karteBaustein",
       "_key": "getraenke-karte",
-      "titel": "Karte",
-      "hinweis": "Sobald eine Karte des Betriebs vorliegt, erscheint sie an dieser Stelle – mit Bezeichnungen, Mengen und Preisen genau so, wie der Betrieb sie führt."
+      "kurzzeile": "Karte",
+      "titel": "Die vollständige Auswahl",
+      "hinweis": "Sobald die Karte des Betriebs vorliegt, erscheint sie an dieser Stelle – mit Bezeichnungen, Mengen und Preisen genau so, wie der Betrieb sie führt."
     },
     {
       "_type": "textBaustein",
@@ -36,12 +60,12 @@
         },
         {
           "_type": "block",
-          "_key": "44490f24c473",
+          "_key": "f68f5a7831e9",
           "style": "normal",
           "children": [
             {
               "_type": "span",
-              "_key": "9a5067de742e",
+              "_key": "4562f6bbddcf",
               "text": "Wird später ein Redaktionssystem angeschlossen, lässt sich die Karte dort pflegen, ohne dass jemand Code anfassen muss. Angebunden ist heute noch keines.",
               "marks": []
             }
@@ -50,12 +74,12 @@
         },
         {
           "_type": "block",
-          "_key": "0ef8a61e79d7",
+          "_key": "dafb6d83bdd8",
           "style": "normal",
           "children": [
             {
               "_type": "span",
-              "_key": "a73b09c70880",
+              "_key": "10ddee8a7849",
               "text": "Bis eine belegte Karte vorliegt, bleibt der Bereich leer.",
               "marks": []
             }
@@ -68,13 +92,13 @@
       "_type": "aufrufBaustein",
       "_key": "getraenke-aufruf",
       "titel": "Fragen zur Karte",
-      "text": "Auskunft zur aktuellen Auswahl gibt der Betrieb selbst, am Telefon oder vor Ort.",
+      "text": "Eine vollständige Getränkekarte und Preise sind für diese Vorschau nicht belegt.",
       "knopf": {
         "titel": "Anrufen",
         "ziel": "tel:+41433448030"
       },
       "zweiterKnopf": {
-        "titel": "Besuch planen",
+        "titel": "Öffnungszeiten",
         "ziel": "/besuch"
       }
     }

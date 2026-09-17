@@ -12,7 +12,7 @@ export function Fusszeile({ einstellungen: e }: { einstellungen: Einstellungen }
       <div className="bahn">
         <div className="fuss-raster">
           <div>
-            <Wortmarke name={e.kurzname} zusatz="Cocktail Lounge" />
+            <Wortmarke name={e.firmenname} fassung="hell" breite="186px" />
             {e.claim ? <p style={{ marginTop: "0.9rem" }}>{e.claim}</p> : null}
           </div>
 

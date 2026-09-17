@@ -24,7 +24,7 @@ export function Kopfzeile({ einstellungen }: { einstellungen: Einstellungen }) {
   return (
     <header className="kopf">
       <div className="bahn">
-        <Wortmarke name={einstellungen.kurzname} zusatz="Cocktail Lounge" />
+        <Wortmarke name={einstellungen.firmenname} fassung="dunkel" breite="168px" />
 
         <nav className="kopf-nav" aria-label="Hauptnavigation">
           {einstellungen.navigation.map((link) => (

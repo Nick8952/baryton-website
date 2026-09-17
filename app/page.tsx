@@ -5,6 +5,7 @@ import { seitenMetadata } from "@/lib/seo";
 import { Bausteine } from "@/components/bausteine/Bausteine";
 import { SmartLink } from "@/components/SmartLink";
 import { Saiten } from "@/components/Saiten";
+import { Wortmarke } from "@/components/Wortmarke";
 
 export async function generateMetadata(): Promise<Metadata> {
   const quelle = await inhaltsquelle();
@@ -28,9 +29,15 @@ export default async function Startseite() {
           <div className="bahn">
             {hero.kurzzeile ? <p className="kurzzeile">{hero.kurzzeile}</p> : null}
             <h1 className="hero-marke">
-              {hero.titel}
-              {hero.untertitel ? <span className="zeile2">{hero.untertitel}</span> : null}
+              <Wortmarke
+                name={e.firmenname}
+                fassung="hell"
+                breite="clamp(15rem, 56vw, 32rem)"
+                alt={e.firmenname}
+                alsLink={false}
+              />
             </h1>
+            {hero.untertitel ? <p className="hero-schild">{hero.untertitel}</p> : null}
             {hero.text ? <p className="hero-text">{hero.text}</p> : null}
             <div className="knopf-reihe">
               {hero.knopf ? (

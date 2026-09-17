@@ -15,7 +15,12 @@ Diese Punkte sind in `docs/QUELLEN.md` hergeleitet. Gebündelt für ein Gespräc
    2021 steht `mbf@baryton.ch` – ungeprüft und deshalb nicht verwendet. Erst mit
    einer bestätigten Adresse erscheint auf der Kontaktseite «E-Mail vorbereiten».
 4. **Getränkekarte** mit Bezeichnungen, Mengen und Preisen.
-5. **Fotos und Logo** mit ausdrücklicher Freigabe zur Nutzung auf der Website.
+5. **Fotos und Originallogo:** Für die Vorschau ist ein von Nick freigegebener,
+   per KI nach dem Leuchtschild erstellter Wortmarken-Nachbau eingebaut. Er ist
+   nicht das Originallogo und muss vom Betrieb selbst freigegeben oder durch eine
+   freigegebene Originaldatei ersetzt werden, sobald der Betrieb die Demo sieht.
+   Weitere Fotos fehlen weiterhin und benötigen ebenfalls eine ausdrückliche
+   Freigabe zur Nutzung auf der Website.
 6. **Reservationen:** Werden sie entgegengenommen, und wie? Ohne bestätigten Prozess
    bleibt die Website ohne Reservationsfunktion.
 7. **Anlässe und abweichende Öffnungszeiten**, die regelmässig anfallen.

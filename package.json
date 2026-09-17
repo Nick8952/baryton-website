@@ -12,13 +12,14 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "bilder": "node scripts/bilder-optimieren.mjs",
-    "inhalt:pruefen": "tsx scripts/inhalt-pruefen.mts",
+    "inhalt:pruefen": "node --import tsx scripts/inhalt-pruefen.mts",
     "text:konvertieren": "tsx scripts/md-zu-portabletext.mts",
     "seed": "tsx scripts/seed.mts",
     "vorschau:pages": "node scripts/vorschau-server.mjs",
     "export:pruefen": "node scripts/export-pruefen.mjs",
     "schriften": "node scripts/schriften-kopieren.mjs",
-    "oeffnung:pruefen": "tsx scripts/oeffnung-pruefen.mts"
+    "oeffnung:pruefen": "node --import tsx scripts/oeffnung-pruefen.mts",
+    "logo": "node scripts/logo-aufbereiten.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",

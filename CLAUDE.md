@@ -125,15 +125,17 @@ und es wird hier kein Design aus einem anderen Projekt eingesetzt. Als
 
 ## 5. Bilder
 
-Derzeit enthält die Website **keine Fotos**. Für die Lounge existiert öffentlich
-kein Bildmaterial mit geklärten Nutzungsrechten: Google weist die Fotos im
-Kartenprofil selbst als möglicherweise urheberrechtlich geschützt aus, die
-Facebook-Seite ist ohne Anmeldung nicht abrufbar, ein Logo ist nicht auffindbar.
+Derzeit enthält die Website **ein Bildmotiv**: eine per KI nach dem Leuchtschild am
+Lokal nachgezeichnete Wortmarke. Sie ist nicht die Originaldatei oder das offizielle
+Logo des Betriebs. Sonst enthält die Website weiterhin keine Fotos. Für die Lounge
+existiert öffentlich kein weiteres Bildmaterial mit geklärten Nutzungsrechten:
+Google weist die Fotos im Kartenprofil selbst als möglicherweise urheberrechtlich
+geschützt aus, die Facebook-Seite ist ohne Anmeldung nicht abrufbar.
 
 Deshalb:
 
-- Der Schriftzug ist eine eigene typografische Wortmarke, **nicht** das offizielle
-  Logo des Betriebs. Das steht so auch im Impressum.
+- Die Wortmarke ist ein freigegebener Nachbau für diese Vorschau, **nicht** das
+  offizielle Logo des Betriebs. Das steht so auch im Impressum.
 - Fotos erst einbauen, wenn der Betrieb sie freigibt. Ablage der Originale in
   `assets/originale/`, Herkunft und Freigabe in `assets/originale/HERKUNFT.md`,
   danach `npm run bilder`.
