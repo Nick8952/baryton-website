@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Baryton">
+  <rect width="64" height="64" rx="10" fill="#17111F" />
+  <g stroke-linecap="round" stroke-width="5">
+    <line x1="14" y1="21" x2="42" y2="21" stroke="#C4B3DE" opacity="0.55" />
+    <line x1="14" y1="32" x2="50" y2="32" stroke="#E68AA6" />
+    <line x1="14" y1="43" x2="34" y2="43" stroke="#C4B3DE" opacity="0.55" />
+  </g>
+</svg>

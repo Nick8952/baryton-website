@@ -1,0 +1,54 @@
+# Baut den statischen Export und veröffentlicht ihn auf GitHub Pages.
+# Läuft bei jedem Push auf main. Keine Geheimnisse nötig – die Demo baut ohne Env-Variablen.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run inhalt:pruefen
+      - run: npm run oeffnung:pruefen
+      - run: npm run lint
+      - run: npm run typecheck
+      # BASE_PATH ist im Code als /baryton-website voreingestellt (lib/deploy-ziel.ts);
+      # hier nur zur Sicherheit aus dem Repository-Namen abgeleitet.
+      - run: npm run build:pages
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+      - run: npm run export:pruefen
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+      - run: touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

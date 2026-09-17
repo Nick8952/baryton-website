@@ -1,0 +1,38 @@
+{
+  "firmenname": "Baryton Cocktail Lounge",
+  "kurzname": "Baryton",
+  "claim": "Loungebar an der Schweizergasse, Zürich",
+  "adresse": {
+    "strasse": "Schweizergasse 8",
+    "plz": "8001",
+    "ort": "Zürich",
+    "land": "Schweiz"
+  },
+  "telefon": "043 344 80 30",
+  "oeffnungszeiten": [
+    { "_key": "mo", "tage": "Montag", "zeiten": "Geschlossen", "wochentag": "Montag", "geschlossen": true },
+    { "_key": "di", "tage": "Dienstag", "zeiten": "15:30 – 23:00", "wochentag": "Dienstag", "von": "15:30", "bis": "23:00" },
+    { "_key": "mi", "tage": "Mittwoch", "zeiten": "15:30 – 23:00", "wochentag": "Mittwoch", "von": "15:30", "bis": "23:00" },
+    { "_key": "do", "tage": "Donnerstag", "zeiten": "15:30 – 00:00", "wochentag": "Donnerstag", "von": "15:30", "bis": "00:00" },
+    { "_key": "fr", "tage": "Freitag", "zeiten": "15:30 – 02:00", "wochentag": "Freitag", "von": "15:30", "bis": "02:00" },
+    { "_key": "sa", "tage": "Samstag", "zeiten": "15:00 – 02:00", "wochentag": "Samstag", "von": "15:00", "bis": "02:00" },
+    { "_key": "so", "tage": "Sonntag", "zeiten": "Geschlossen", "wochentag": "Sonntag", "geschlossen": true }
+  ],
+  "oeffnungszeitenHinweis": "Öffnungszeiten laut dem Google-Unternehmensprofil der Lounge, abgerufen am 17. September 2026. Sie sind nicht direkt vom Betrieb bestätigt – vor dem Besuch lohnt sich ein Anruf.",
+  "sonderoeffnungszeiten": [],
+  "routenlink": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
+  "navigation": [
+    { "titel": "Start", "ziel": "/" },
+    { "titel": "Getränke", "ziel": "/getraenke" },
+    { "titel": "Besuch", "ziel": "/besuch" }
+  ],
+  "rechtslinks": [
+    { "titel": "Impressum", "ziel": "/impressum" },
+    { "titel": "Datenschutz", "ziel": "/datenschutz" }
+  ],
+  "seo": {
+    "titelZusatz": "Baryton Cocktail Lounge, Zürich",
+    "beschreibung": "Loungebar an der Schweizergasse 8 im Zürcher Kreis 1. Öffnungszeiten, Adresse und Kontakt auf einen Blick."
+  },
+  "demoHinweis": "Unverbindliches Gestaltungskonzept – nicht von der Baryton Cocktail Lounge beauftragt. Über diese Seite sind keine Reservationen möglich."
+}

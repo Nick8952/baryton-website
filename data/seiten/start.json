@@ -1,0 +1,86 @@
+{
+  "id": "seite-start",
+  "slug": "start",
+  "titel": "Loungebar an der Schweizergasse",
+  "seoTitel": "Loungebar an der Schweizergasse",
+  "seoBeschreibung": "Die Baryton Cocktail Lounge liegt an der Schweizergasse 8 im Zürcher Kreis 1. Öffnungszeiten, Adresse und Telefonnummer auf einen Blick.",
+  "hero": {
+    "kurzzeile": "Schweizergasse 8 · Zürich Kreis 1",
+    "titel": "Baryton",
+    "text": "Loungebar an der Schweizergasse 8, im Zürcher Kreis 1. Dienstag bis Samstag geöffnet.",
+    "knopf": {
+      "titel": "Route planen",
+      "ziel": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
+      "extern": true
+    },
+    "zweiterKnopf": {
+      "titel": "Anrufen",
+      "ziel": "tel:+41433448030"
+    },
+    "untertitel": "Cocktail Lounge"
+  },
+  "bausteine": [
+    {
+      "_type": "oeffnungszeitenBaustein",
+      "_key": "start-woche",
+      "kurzzeile": "Die Woche",
+      "titel": "Wann offen ist",
+      "einleitung": "Jede Linie steht für einen Abend. Ihre Länge zeigt, wie lange die Lounge an diesem Tag geöffnet hat.",
+      "darstellung": "resonanz"
+    },
+    {
+      "_type": "faktenBaustein",
+      "_key": "start-fakten",
+      "kurzzeile": "Auf einen Blick",
+      "titel": "Adresse und Kontakt",
+      "fakten": [
+        {
+          "_key": "f1",
+          "bezeichnung": "Adresse",
+          "wert": "Schweizergasse 8, 8001 Zürich"
+        },
+        {
+          "_key": "f2",
+          "bezeichnung": "Quartier",
+          "wert": "Kreis 1, City"
+        },
+        {
+          "_key": "f3",
+          "bezeichnung": "Telefon",
+          "wert": "043 344 80 30"
+        },
+        {
+          "_key": "f4",
+          "bezeichnung": "Geöffnet",
+          "wert": "Dienstag bis Samstag"
+        }
+      ]
+    },
+    {
+      "_type": "karteBaustein",
+      "_key": "start-karte",
+      "kurzzeile": "Getränke",
+      "titel": "Die Karte",
+      "hinweis": "Für diese Vorschau liegt keine Getränkekarte vor. Damit hier nichts Erfundenes steht, bleibt der Bereich leer.",
+      "weiterLink": {
+        "titel": "Zum Getränkebereich",
+        "ziel": "/getraenke"
+      }
+    },
+    {
+      "_type": "aufrufBaustein",
+      "_key": "start-aufruf",
+      "titel": "Vorbeikommen",
+      "text": "Die Lounge liegt an der Schweizergasse 8 im Kreis 1. Fragen beantwortet der Betrieb am Telefon.",
+      "knopf": {
+        "titel": "Route planen",
+        "ziel": "https://www.google.com/maps/dir/?api=1&destination=Baryton%20Cocktail%20Lounge%2C%20Schweizergasse%208%2C%208001%20Z%C3%BCrich",
+        "extern": true
+      },
+      "zweiterKnopf": {
+        "titel": "Besuch planen",
+        "ziel": "/besuch"
+      }
+    }
+  ]
+}

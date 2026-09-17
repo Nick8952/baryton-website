@@ -1,0 +1,328 @@
+{
+  "id": "rechtstext-impressum",
+  "art": "impressum",
+  "titel": "Impressum",
+  "stand": "17. September 2026",
+  "inhalt": [
+    {
+      "_type": "block",
+      "_key": "b855dfd6e080",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "cf96b56d59b3",
+          "text": "Verantwortlich für diese Website",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "b50a8c26bc3a",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "5b928084da53",
+          "text": "Diese Website ist ein unverbindliches Gestaltungskonzept für die Baryton Cocktail Lounge. Sie wurde nicht vom Betrieb beauftragt und wird nicht von ihm betrieben.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "2c29868ed41e",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "b482c51df2d6",
+          "text": "Verantwortlich für Inhalt und Veröffentlichung dieser Vorschau:",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "5e894a41ee14",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "af5bb1bcc2d3",
+          "text": "Nick Holzbecher",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "3236bcee16ea",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "524cf207f766",
+          "text": "E-Mail: ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "d0758d103433",
+          "text": "holzbechernick@gmail.com",
+          "marks": [
+            "2cdf785023af"
+          ]
+        }
+      ],
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "2cdf785023af",
+          "href": "mailto:holzbechernick@gmail.com",
+          "extern": false
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "b04db34769d8",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "b30b6db97b4a",
+          "text": "Anfragen zu dieser Vorschau – auch zur Entfernung – gehen an diese Adresse und werden zeitnah bearbeitet.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "76f0ea130e57",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "71d89e29829b",
+          "text": "Dargestellter Betrieb",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "1cc5344d814d",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "a999c29e01a8",
+          "text": "Die gezeigten Angaben beziehen sich auf:",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "fe0cd91a4883",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "90a641a4132d",
+          "text": "Baryton Cocktail Lounge",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "9fb07513530c",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "48211ede4ac9",
+          "text": "Schweizergasse 8, 8001 Zürich",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "2a27b1925dc6",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "de1625737156",
+          "text": "Telefon: ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "3a14a849d032",
+          "text": "043 344 80 30",
+          "marks": [
+            "0242459309c3"
+          ]
+        }
+      ],
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "0242459309c3",
+          "href": "tel:+41433448030",
+          "extern": false
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "7221721b6431",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "c51fed330495",
+          "text": "Der rechtliche Firmenname, die Rechtsform, eine allfällige Unternehmens-Identifikationsnummer und die verantwortlichen Personen sind öffentlich nicht belegt und werden hier deshalb nicht aufgeführt. Sie werden ergänzt, sobald sie vom Betrieb bestätigt sind.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "49b7caa4bc91",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "ba64640ad16f",
+          "text": "Herkunft der Angaben",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "2abda40af565",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "cd82a359973a",
+          "text": "Adresse, Telefonnummer und Öffnungszeiten stammen aus dem öffentlich einsehbaren Google-Unternehmensprofil der Lounge, abgerufen am 17. September 2026. Angaben aus Verzeichnisportalen wurden nicht übernommen, weil sie sich widersprechen.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "64a807159417",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "45f41391286b",
+          "text": "Es werden bewusst keine Getränke, Preise, Veranstaltungen, Bewertungen oder Fotos der Lounge gezeigt, für die keine bestätigte Grundlage vorliegt.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "8e858f369fac",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "aee80a8b9861",
+          "text": "Urheberrecht",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "53e9ead2121b",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "5fcd76a68dc9",
+          "text": "Gestaltung, Aufbau und Texte dieser Vorschau stammen von der oben genannten verantwortlichen Person. Der Name «Baryton Cocktail Lounge» sowie sämtliche Kennzeichen des Betriebs bleiben beim Betrieb. Die auf dieser Seite gezeigte Schriftzug-Darstellung ist ein eigener gestalterischer Vorschlag und nicht das offizielle Logo des Betriebs.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "6d4e0560cca6",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "df9d1fd199f6",
+          "text": "Haftung",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "c5ca8d0cd67d",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "6aede02ef218",
+          "text": "Die Angaben wurden sorgfältig recherchiert, können sich aber jederzeit ändern. Für Aktualität, Richtigkeit und Vollständigkeit wird keine Gewähr übernommen. Verbindlich sind ausschliesslich die Auskünfte des Betriebs selbst.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "16acd8296c58",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "1b8586977425",
+          "text": "Für Inhalte externer Websites, auf die verlinkt wird, sind deren Betreiber verantwortlich.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    }
+  ]
+}

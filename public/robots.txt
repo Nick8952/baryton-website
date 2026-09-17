@@ -1,0 +1,12 @@
+# Baryton Cocktail Lounge – Vorschau
+#
+# Die Seiten sind bewusst crawlbar, tragen aber alle <meta name="robots" content="noindex">.
+# Ein pauschales "Disallow: /" würde verhindern, dass Suchmaschinen dieses noindex überhaupt
+# lesen können – die Seite bliebe dann unter Umständen im Index.
+#
+# Hinweis: Unter einem Repository-Unterpfad (nick8952.github.io/baryton-website/) wird diese
+# Datei von Suchmaschinen nicht als robots.txt gelesen; massgeblich ist dort das noindex im
+# Seitenkopf. Nach dem Umzug auf eine eigene Domain wird diese Datei wirksam.
+
+User-agent: *
+Allow: /

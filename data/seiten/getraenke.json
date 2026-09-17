@@ -1,0 +1,82 @@
+{
+  "id": "seite-getraenke",
+  "slug": "getraenke",
+  "titel": "Getränke",
+  "einleitung": "Für diese Vorschau liegt keine Getränkekarte vor. Statt etwas auszudenken, bleibt der Bereich leer – die Darstellung dafür steht aber bereit.",
+  "seoTitel": "Getränke",
+  "seoBeschreibung": "Getränkebereich der Baryton Cocktail Lounge, Schweizergasse 8, Zürich. Die Karte wird ergänzt, sobald sie vorliegt.",
+  "bausteine": [
+    {
+      "_type": "karteBaustein",
+      "_key": "getraenke-karte",
+      "titel": "Karte",
+      "hinweis": "Sobald eine Karte des Betriebs vorliegt, erscheint sie an dieser Stelle – mit Bezeichnungen, Mengen und Preisen genau so, wie der Betrieb sie führt."
+    },
+    {
+      "_type": "textBaustein",
+      "_key": "getraenke-erklaerung",
+      "kurzzeile": "Vorbereitet",
+      "titel": "Wie dieser Bereich aufgebaut ist",
+      "dunkel": true,
+      "breite": "schmal",
+      "inhalt": [
+        {
+          "_type": "block",
+          "_key": "e89accf8522d",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "8483b220a43e",
+              "text": "Die Darstellung steht bereits: Kategorien, Getränke, Mengenangaben, Preise und kurze Hinweise wie «alkoholfrei» sind im Inhaltsmodell angelegt.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "44490f24c473",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "9a5067de742e",
+              "text": "Wird später ein Redaktionssystem angeschlossen, lässt sich die Karte dort pflegen, ohne dass jemand Code anfassen muss. Angebunden ist heute noch keines.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "0ef8a61e79d7",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "a73b09c70880",
+              "text": "Bis eine belegte Karte vorliegt, bleibt der Bereich leer.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "aufrufBaustein",
+      "_key": "getraenke-aufruf",
+      "titel": "Fragen zur Karte",
+      "text": "Auskunft zur aktuellen Auswahl gibt der Betrieb selbst, am Telefon oder vor Ort.",
+      "knopf": {
+        "titel": "Anrufen",
+        "ziel": "tel:+41433448030"
+      },
+      "zweiterKnopf": {
+        "titel": "Besuch planen",
+        "ziel": "/besuch"
+      }
+    }
+  ]
+}

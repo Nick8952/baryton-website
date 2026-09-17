@@ -1,0 +1,14 @@
+{
+  "id": "seite-impressum",
+  "slug": "impressum",
+  "titel": "Impressum",
+  "seoTitel": "Impressum",
+  "seoBeschreibung": "Verantwortlich für diese Vorschau-Website und Angaben zum dargestellten Betrieb.",
+  "bausteine": [
+    {
+      "_type": "rechtstextBaustein",
+      "_key": "impressum-text",
+      "rechtstext": "impressum"
+    }
+  ]
+}

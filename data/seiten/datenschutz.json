@@ -1,0 +1,14 @@
+{
+  "id": "seite-datenschutz",
+  "slug": "datenschutz",
+  "titel": "Datenschutz",
+  "seoTitel": "Datenschutzerklärung",
+  "seoBeschreibung": "Welche Daten diese Website verarbeitet – und welche nicht.",
+  "bausteine": [
+    {
+      "_type": "rechtstextBaustein",
+      "_key": "datenschutz-text",
+      "rechtstext": "datenschutz"
+    }
+  ]
+}

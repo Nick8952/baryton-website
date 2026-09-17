@@ -1,0 +1,55 @@
+{
+  "name": "baryton-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/vercel-routen.mjs --entfernen && cross-env DEPLOY_TARGET=pages next dev",
+    "dev:vercel": "node scripts/vercel-routen.mjs && cross-env DEPLOY_TARGET=vercel next dev",
+    "build": "npm run build:pages",
+    "build:pages": "node scripts/vercel-routen.mjs --entfernen && cross-env DEPLOY_TARGET=pages next build",
+    "build:vercel": "node scripts/vercel-routen.mjs && cross-env DEPLOY_TARGET=vercel next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "bilder": "node scripts/bilder-optimieren.mjs",
+    "inhalt:pruefen": "tsx scripts/inhalt-pruefen.mts",
+    "text:konvertieren": "tsx scripts/md-zu-portabletext.mts",
+    "seed": "tsx scripts/seed.mts",
+    "vorschau:pages": "node scripts/vorschau-server.mjs",
+    "export:pruefen": "node scripts/export-pruefen.mjs",
+    "schriften": "node scripts/schriften-kopieren.mjs",
+    "oeffnung:pruefen": "tsx scripts/oeffnung-pruefen.mts"
+  },
+  "dependencies": {
+    "@portabletext/react": "^8.0.1",
+    "@portabletext/types": "^4.0.2",
+    "@sanity/client": "^8.6.1",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/locale-de-de": "^1.1.37",
+    "@sanity/vision": "^6.13.2",
+    "next": "16.3.5",
+    "next-sanity": "^13.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "sanity": "^6.13.2",
+    "server-only": "^0.0.1",
+    "styled-components": "^6.5.3"
+  },
+  "devDependencies": {
+    "@fontsource-variable/fraunces": "^5",
+    "@fontsource-variable/schibsted-grotesk": "^5",
+    "@next/env": "^16.3.5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "sharp": "^0.35.4",
+    "tsx": "^4.23.13",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

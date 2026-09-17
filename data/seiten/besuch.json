@@ -1,0 +1,77 @@
+{
+  "id": "seite-besuch",
+  "slug": "besuch",
+  "titel": "Besuch & Kontakt",
+  "einleitung": "Adresse, Öffnungszeiten und Telefonnummer der Baryton Cocktail Lounge.",
+  "seoTitel": "Besuch & Kontakt",
+  "seoBeschreibung": "Baryton Cocktail Lounge, Schweizergasse 8, 8001 Zürich. Öffnungszeiten, Telefonnummer und Routenlink.",
+  "bausteine": [
+    {
+      "_type": "kontaktBaustein",
+      "_key": "besuch-kontakt",
+      "kurzzeile": "Kontakt",
+      "titel": "Hinkommen und erreichen",
+      "einleitung": "Diese Website nimmt keine Reservationen entgegen und leitet auch keine Anfragen weiter. Der Betrieb ist direkt telefonisch erreichbar.",
+      "mitFormular": false
+    },
+    {
+      "_type": "oeffnungszeitenBaustein",
+      "_key": "besuch-zeiten",
+      "kurzzeile": "Öffnungszeiten",
+      "titel": "Die Woche im Überblick",
+      "darstellung": "liste",
+      "mitSonderzeiten": true
+    },
+    {
+      "_type": "textBaustein",
+      "_key": "besuch-anreise",
+      "kurzzeile": "Anreise",
+      "titel": "Wo die Lounge liegt",
+      "breite": "schmal",
+      "inhalt": [
+        {
+          "_type": "block",
+          "_key": "4a88a2aa6080",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "7930442ba0ba",
+              "text": "Die Schweizergasse liegt im Zürcher Kreis 1 und verbindet die Bahnhofstrasse mit dem Gebiet um den Hauptbahnhof.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "24ca590e22c5",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "5940ebf64d06",
+              "text": "Adresse für das Navigationsgerät: Schweizergasse 8, 8001 Zürich.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "d87dcd928bf8",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "f6becf7f3ba2",
+              "text": "Ob die Lounge gerade offen hat, zeigt der Hinweis oben auf jeder Seite – er rechnet mit Zürcher Ortszeit.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}

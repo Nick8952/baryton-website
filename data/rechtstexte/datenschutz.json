@@ -1,0 +1,408 @@
+{
+  "id": "rechtstext-datenschutz",
+  "art": "datenschutz",
+  "titel": "Datenschutzerklärung",
+  "stand": "17. September 2026",
+  "inhalt": [
+    {
+      "_type": "block",
+      "_key": "e9bdec0b53a0",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "d14862a7a7ad",
+          "text": "Verantwortliche Stelle",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "931390f5ca45",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "cdc399613a33",
+          "text": "Verantwortlich für die Datenbearbeitung auf dieser Vorschau-Website ist Nick Holzbecher, erreichbar über ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "d3a2acd06b23",
+          "text": "holzbechernick@gmail.com",
+          "marks": [
+            "ada027acd09b"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "3022d3d6f9b8",
+          "text": ". Die Baryton Cocktail Lounge ist für diese Website nicht verantwortlich.",
+          "marks": []
+        }
+      ],
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "ada027acd09b",
+          "href": "mailto:holzbechernick@gmail.com",
+          "extern": false
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "569c38ba0ccf",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "97a82cf68367",
+          "text": "Diese Erklärung richtet sich nach dem schweizerischen Datenschutzgesetz (DSG). Soweit die europäische Datenschutz-Grundverordnung (DSGVO) auf Besuche aus dem EWR anwendbar ist, gelten die unten genannten Rechte sinngemäss.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "06485d65218f",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "6bedcba27587",
+          "text": "Was diese Website nicht tut",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "d6c6b9a4e500",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "4767cc85bfed",
+          "text": "Diese Website ist bewusst schlank gebaut:",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "888c3ada014d",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "c994034bdf31",
+          "text": "Sie setzt keine Cookies und legt nichts im Browser-Speicher ab.",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "656932ed71dc",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "65d475651266",
+          "text": "Sie bindet keine Analyse-, Statistik- oder Werbedienste ein.",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "01f73c11eaa7",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "d6acc88a2afb",
+          "text": "Sie lädt keine Schriften, Karten, Videos oder Social-Media-Inhalte von fremden Servern. Alle Schriften und Grafiken kommen vom selben Server wie die Seite.",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "a99df8694a37",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "ca32a39db011",
+          "text": "Sie führt kein Kontaktformular und nimmt keine Reservationen entgegen.",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "9aaca3a32a7f",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "0b14904a2a96",
+          "text": "Weil keine einwilligungspflichtigen Dienste zum Einsatz kommen, gibt es kein Einwilligungsfenster. Es gäbe nichts, worin eingewilligt werden könnte. Welche Verbindungen die Seite herstellt, lässt sich jederzeit im Netzwerk-Protokoll des Browsers nachprüfen.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "23426834a72a",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "57a3810543a6",
+          "text": "Hosting und Server-Protokolle",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "df8807630571",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "1b9e34f68508",
+          "text": "Die Website wird bei GitHub Pages gehostet, einem Dienst der GitHub Inc. (Microsoft-Konzern), mit Sitz in den USA. Beim Abruf einer Seite verarbeitet GitHub technisch notwendige Verbindungsdaten. Dazu gehören laut Angaben des Anbieters insbesondere die IP-Adresse der Besucherin oder des Besuchers, Zeitpunkt des Zugriffs, die angeforderte Datei sowie übermittelte Browser- und Geräteangaben.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "fcb147ac1037",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "ea89c471e845",
+          "text": "Diese Bearbeitung dient ausschliesslich der Auslieferung der Seite, dem stabilen Betrieb und der Abwehr von Missbrauch und Angriffen. Sie ist für den Betrieb einer Website technisch unvermeidbar; ein berechtigtes Interesse am sicheren Betrieb liegt vor.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "526ac8d21bea",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "f50c39b94093",
+          "text": "Auf Umfang, Speicherort und Aufbewahrungsdauer dieser Protokolle hat die verantwortliche Stelle keinen Einfluss und keinen Zugriff. Massgeblich ist die Datenschutzerklärung von GitHub: ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "2be7176e1192",
+          "text": "docs.github.com/site-policy/privacy-policies",
+          "marks": [
+            "ff5584adf23f"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "f73f8baf1fca",
+          "text": ".",
+          "marks": []
+        }
+      ],
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "ff5584adf23f",
+          "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+          "extern": true
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b64156a275c4",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "8f393a3d645c",
+          "text": "Weil GitHub seinen Sitz in den USA hat, können diese Daten ins Ausland gelangen. Der Anbieter stützt solche Übermittlungen auf die Standardvertragsklauseln und vergleichbare Garantien.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "55fbdcb0c564",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "a7156c5d90c3",
+          "text": "Kontaktaufnahme",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "f77d6e53639c",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "8c993fa270da",
+          "text": "Über die Telefonnummer auf dieser Website wird direkt der Betrieb erreicht. Solche Gespräche laufen nicht über diese Website; für sie ist der Betrieb verantwortlich.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "3f6bb23e8acb",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "edbcfc940a0c",
+          "text": "Wer sich per E-Mail an die verantwortliche Stelle wendet, übermittelt dabei die E-Mail-Adresse und den Inhalt der Nachricht. Diese Angaben werden nur zur Bearbeitung der Anfrage verwendet und danach nicht weiterverwendet.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "bea592dcdae4",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "3eba53922b04",
+          "text": "Links zu anderen Websites",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "f35716cf4c91",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "d5cc7bcc169d",
+          "text": "Der Routenlink führt zu Google Maps. Erst wenn dieser Link angeklickt wird, entsteht eine Verbindung zu Google; dann gelten die Bestimmungen von Google. Auf dieser Website selbst wird keine Karte geladen.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "894a08e17228",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "62c97a6753e0",
+          "text": "Ihre Rechte",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "bf1455b050dc",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "d13448809145",
+          "text": "Betroffene Personen können Auskunft darüber verlangen, ob und welche Personendaten über sie bearbeitet werden. Ebenso können sie die Berichtigung oder Löschung unrichtiger oder unrechtmässig bearbeiteter Daten verlangen und der Bearbeitung widersprechen. Anfragen gehen an die oben genannte Adresse.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "e7efe35bcb02",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "f3d64dc41d4f",
+          "text": "Wer sich in seinen Rechten verletzt sieht, kann sich in der Schweiz an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten wenden. Im Anwendungsbereich der DSGVO besteht zusätzlich ein Beschwerderecht bei einer Aufsichtsbehörde.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "c10ea887cee6",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "0c7eb4d7ff3d",
+          "text": "Änderungen",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "_key": "d0dde09c634b",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "76ea08f13da2",
+          "text": "Diese Erklärung beschreibt den technischen Stand dieser Vorschau. Wird die Website später auf eine andere Umgebung umgestellt oder kommen Dienste hinzu, wird sie vorher angepasst.",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    }
+  ]
+}

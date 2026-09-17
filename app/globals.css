@@ -1,0 +1,1227 @@
+/* ==========================================================================
+   Baryton Cocktail Lounge – Gestaltungskonzept «Resonanz»
+   --------------------------------------------------------------------------
+   Ein Baryton ist ein Streichinstrument mit mitschwingenden Resonanzsaiten.
+   Daraus kommt das durchgehende Motiv: waagrechte Linien, die die Woche
+   abbilden. Die Wochengrafik ist keine Dekoration – die Länge jeder Linie
+   entspricht der tatsächlichen Öffnungsdauer des Tages.
+
+   Farben: helles Papier trägt die Inhalte, Nachtflächen rahmen sie (Hero,
+   Footer, einzelne Abschnitte). Akzent ist Amarena – ein Rotviolett aus der
+   Cocktailwelt, bewusst kein Gold.
+   ========================================================================== */
+
+:root {
+  /* Flächen */
+  --nacht: #17111f;
+  --tiefe: #0d0912;
+  --papier: #f7f2ea;
+  --papier-warm: #efe6d9;
+
+  /* Schrift */
+  --tinte: #221b29;
+  --tinte-leise: #5b4f66;
+  --papier-leise: #c9bed6;
+
+  /* Akzent */
+  --amarena: #b3355c;
+  --amarena-dunkel: #8f2949;
+  --amarena-hell: #e68aa6;
+  --flieder: #c4b3de;
+
+  /* Linien */
+  --linie: #ded2c2;
+  --linie-nacht: #362a46;
+
+  /* Raster */
+  --rand: clamp(1rem, 5vw, 5rem);
+  --spalte-max: 72rem;
+  --text-max: 38rem;
+  --abstand-abschnitt: clamp(3.5rem, 9vw, 7.5rem);
+
+  --radius: 2px;
+  --tempo: 260ms;
+  --kurve: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------- Grundlagen */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--tinte);
+  font-family: var(--schrift-text), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--schrift-anzeige), Georgia, serif;
+  font-weight: 400;
+  font-variation-settings: "SOFT" 30, "WONK" 1;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.1em;
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amarena);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+.nacht :focus-visible,
+.fuss :focus-visible {
+  outline-color: var(--amarena-hell);
+}
+
+::selection {
+  background: var(--amarena);
+  color: #fff;
+}
+
+.nur-fuer-screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.sprung {
+  position: absolute;
+  left: var(--rand);
+  top: 0.5rem;
+  z-index: 60;
+  transform: translateY(-160%);
+  background: var(--amarena);
+  color: #fff;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  transition: transform var(--tempo) var(--kurve);
+}
+
+.sprung:focus {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------ Raster */
+
+.bahn {
+  width: 100%;
+  max-width: var(--spalte-max);
+  margin-inline: auto;
+  padding-inline: var(--rand);
+}
+
+.abschnitt {
+  padding-block: var(--abstand-abschnitt);
+}
+
+.abschnitt.nacht {
+  background: var(--nacht);
+  color: var(--papier);
+}
+
+.abschnitt.nacht h1,
+.abschnitt.nacht h2,
+.abschnitt.nacht h3 {
+  color: var(--papier);
+}
+
+.abschnitt + .abschnitt:not(.nacht) {
+  padding-top: 0;
+}
+
+.schmal {
+  max-width: var(--text-max);
+}
+
+/* Etikett über einem Abschnittstitel – zugleich Anker des Linienmotivs. */
+.kurzzeile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amarena);
+  margin: 0 0 1rem;
+}
+
+.kurzzeile::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--linie);
+}
+
+.nacht .kurzzeile {
+  color: var(--amarena-hell);
+}
+
+.nacht .kurzzeile::after {
+  background: var(--linie-nacht);
+}
+
+.abschnitt-kopf {
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+  max-width: var(--text-max);
+}
+
+.abschnitt-kopf h2 {
+  font-size: clamp(1.85rem, 4.4vw, 2.9rem);
+}
+
+.abschnitt-kopf .einleitung {
+  margin-top: 0.9rem;
+  color: var(--tinte-leise);
+  font-size: 1.05rem;
+}
+
+.nacht .abschnitt-kopf .einleitung {
+  color: var(--papier-leise);
+}
+
+/* ----------------------------------------------------------------- Wortmarke */
+
+.wortmarke {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.wortmarke .name {
+  font-family: var(--schrift-anzeige), Georgia, serif;
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 36;
+  font-weight: 500;
+  font-size: 1.32rem;
+  letter-spacing: 0.06em;
+}
+
+.wortmarke .zusatz {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--tinte-leise);
+}
+
+.fuss .wortmarke .zusatz,
+.nacht .wortmarke .zusatz {
+  color: var(--papier-leise);
+}
+
+/* -------------------------------------------------------------------- Knöpfe */
+
+.knopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.9rem;
+  padding: 0.7rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 0.97rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--amarena);
+  color: #fff;
+  transition:
+    background var(--tempo) var(--kurve),
+    transform var(--tempo) var(--kurve);
+}
+
+.knopf:hover {
+  background: var(--amarena-dunkel);
+}
+
+.knopf:active {
+  transform: translateY(1px);
+}
+
+.knopf.leise {
+  background: transparent;
+  color: var(--tinte);
+  border-color: var(--linie);
+}
+
+.knopf.leise:hover {
+  background: var(--papier-warm);
+  border-color: var(--tinte-leise);
+}
+
+/* Alle dunklen Flächen: der zweite Knopf muss hell bleiben, sonst steht dunkel auf dunkel. */
+.nacht .knopf.leise,
+.fuss .knopf.leise,
+.hero .knopf.leise,
+.aufruf .knopf.leise,
+.fehler .knopf.leise {
+  color: var(--papier);
+  border-color: var(--papier-leise);
+}
+
+.nacht .knopf.leise:hover,
+.fuss .knopf.leise:hover,
+.hero .knopf.leise:hover,
+.aufruf .knopf.leise:hover,
+.fehler .knopf.leise:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--papier);
+}
+
+.knopf-reihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+/* Textlink mit wachsender Unterstreichung */
+.textlink {
+  display: inline-block;
+  color: var(--amarena);
+  font-weight: 600;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  padding-bottom: 2px;
+  transition: background-size var(--tempo) var(--kurve);
+}
+
+.textlink:hover {
+  background-size: 100% 2px;
+}
+
+/* Alleinstehende Textlinks (nicht im Fliesstext) brauchen eine Tippfläche von 44 px. */
+.textlink.frei,
+.kontakt-karte .textlink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+}
+
+.nacht .textlink,
+.fuss .textlink {
+  color: var(--amarena-hell);
+}
+
+/* ------------------------------------------------------------------ Demoband */
+
+.demoband {
+  background: var(--tiefe);
+  color: var(--papier-leise);
+  font-size: 0.79rem;
+  line-height: 1.45;
+  padding-block: 0.5rem;
+}
+
+.demoband .bahn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.demoband .punkt {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amarena-hell);
+}
+
+/* ------------------------------------------------------------------ Kopfzeile */
+
+.kopf {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(247, 242, 234, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linie);
+}
+
+.kopf .bahn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.25rem;
+}
+
+.kopf-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.kopf-nav a {
+  position: relative;
+  padding: 0.7rem 0.85rem;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.kopf-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.45rem;
+  height: 1.5px;
+  background: var(--amarena);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--tempo) var(--kurve);
+}
+
+.kopf-nav a:hover::after,
+.kopf-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.kopf-nav a[aria-current="page"] {
+  color: var(--amarena);
+}
+
+/* Status-Anzeige «geöffnet / geschlossen» */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  color: var(--tinte-leise);
+  white-space: nowrap;
+}
+
+.status .leuchte {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.status.offen {
+  color: var(--amarena);
+  border-color: color-mix(in srgb, var(--amarena) 35%, transparent);
+}
+
+.kopf .status {
+  display: none;
+}
+
+@media (min-width: 62rem) {
+  .kopf .status {
+    display: inline-flex;
+  }
+}
+
+/* Mobiles Menü: <details> – funktioniert auch ohne JavaScript */
+.menue {
+  margin-left: auto;
+  position: relative;
+}
+
+.menue > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 2.9rem;
+  min-height: 2.9rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menue > summary::-webkit-details-marker {
+  display: none;
+}
+
+.menue[open] > summary {
+  background: var(--papier-warm);
+}
+
+.menue-inhalt {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.6rem);
+  min-width: 14rem;
+  background: var(--papier);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px -22px rgba(23, 17, 31, 0.5);
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.menue-inhalt a {
+  display: flex;
+  align-items: center;
+  min-height: 2.9rem;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+
+.menue-inhalt a:hover {
+  background: var(--papier-warm);
+}
+
+.menue-inhalt a[aria-current="page"] {
+  color: var(--amarena);
+}
+
+.menue-inhalt .status {
+  margin: 0.4rem 0.3rem 0.2rem;
+  justify-content: center;
+}
+
+@media (min-width: 48rem) {
+  .menue {
+    display: none;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .kopf-nav {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- Hero */
+
+.hero {
+  position: relative;
+  background: var(--nacht);
+  color: var(--papier);
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 11vw, 8rem);
+}
+
+.hero::after {
+  /* weicher Lichtkegel hinter dem Schriftzug */
+  content: "";
+  position: absolute;
+  inset: auto -20% -60% 30%;
+  height: 120%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(179, 53, 92, 0.32), transparent 70%);
+  pointer-events: none;
+}
+
+.hero .bahn {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .kurzzeile {
+  color: var(--flieder);
+}
+
+.hero .kurzzeile::after {
+  background: var(--linie-nacht);
+}
+
+.hero-marke {
+  font-family: var(--schrift-anzeige), Georgia, serif;
+  font-weight: 400;
+  font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 144;
+  font-size: clamp(2.9rem, 12vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.hero-marke .zeile2 {
+  display: block;
+  font-size: 0.34em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 20;
+  font-weight: 500;
+  color: var(--flieder);
+  margin-top: 0.9rem;
+}
+
+.hero-text {
+  margin-top: 1.5rem;
+  max-width: 30rem;
+  font-size: clamp(1.02rem, 2.2vw, 1.18rem);
+  color: var(--papier-leise);
+}
+
+/* Resonanzsaiten im Hero */
+.saiten {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.saiten line {
+  stroke: var(--flieder);
+  stroke-width: 1;
+}
+
+/* ------------------------------------------------------- Wochengrafik «Resonanz» */
+
+/* Als reine Liste (ohne Grafik) darf die Zeile nicht über die ganze Breite auseinanderlaufen. */
+.woche-block.ist-liste {
+  max-width: 32rem;
+}
+
+.woche {
+  display: grid;
+  gap: 0.15rem;
+}
+
+/*
+ * Die Marken sitzen absolut an ihrem Anteil der Spanne (15:00–02:00 sind 11 Stunden,
+ * 18:00 liegt also bei 27 % und nicht in der Mitte). Gleichmässiges Verteilen wäre falsch.
+ */
+.woche-skala {
+  position: relative;
+  height: 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--tinte-leise);
+  margin-left: var(--tagbreite);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--linie);
+  margin-bottom: 0.6rem;
+}
+
+.woche-skala span {
+  position: absolute;
+  top: 0;
+  translate: -50% 0;
+  white-space: nowrap;
+}
+
+/* Erste und letzte Marke nicht über den Rand hängen lassen. */
+.woche-skala span:first-child {
+  translate: 0 0;
+}
+
+.woche-skala span:last-child {
+  translate: -100% 0;
+}
+
+.nacht .woche-skala {
+  color: var(--papier-leise);
+  border-color: var(--linie-nacht);
+}
+
+.woche-zeile {
+  display: grid;
+  grid-template-columns: var(--tagbreite) 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--linie);
+}
+
+.nacht .woche-zeile {
+  border-color: var(--linie-nacht);
+}
+
+.woche-zeile:last-child {
+  border-bottom: none;
+}
+
+.woche-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.woche-zeit {
+  font-size: 0.85rem;
+  color: var(--tinte-leise);
+  white-space: nowrap;
+}
+
+.nacht .woche-zeit {
+  color: var(--papier-leise);
+}
+
+.woche-spur {
+  position: relative;
+  height: 1.4rem;
+}
+
+/* Grundlinie: der Tag als ruhende Saite */
+.woche-spur::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--linie);
+}
+
+.nacht .woche-spur::before {
+  background: var(--linie-nacht);
+}
+
+/* Öffnungsbalken: Position = Beginn, Länge = Dauer */
+.woche-balken {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--amarena);
+  transform-origin: left center;
+}
+
+.nacht .woche-balken {
+  background: var(--amarena-hell);
+}
+
+.woche-zeile.heute .woche-tag {
+  color: var(--amarena);
+}
+
+.nacht .woche-zeile.heute .woche-tag {
+  color: var(--amarena-hell);
+}
+
+.woche-zeile.heute .woche-balken {
+  height: 7px;
+}
+
+.woche-marke {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amarena);
+}
+
+.nacht .woche-marke {
+  color: var(--amarena-hell);
+}
+
+.quellhinweis {
+  margin-top: 1.25rem;
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: var(--tinte-leise);
+  max-width: var(--text-max);
+}
+
+.nacht .quellhinweis {
+  color: var(--papier-leise);
+}
+
+/* Schmale Geräte: Tag und Zeit stehen in einer Zeile, die Saite darunter über die volle Breite. */
+@media (max-width: 34rem) {
+  .woche-zeile {
+    grid-template-columns: 1fr auto;
+    row-gap: 0.3rem;
+    padding-block: 0.7rem;
+  }
+
+  .woche-tag {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .woche-zeit {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    font-size: 0.82rem;
+  }
+
+  .woche-spur {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 0.75rem;
+  }
+
+  .woche-skala {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------- Fakten */
+
+.fakten {
+  display: grid;
+  gap: 1px;
+  background: var(--linie);
+  border: 1px solid var(--linie);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.nacht .fakten {
+  background: var(--linie-nacht);
+  border-color: var(--linie-nacht);
+}
+
+.fakt {
+  background: var(--papier);
+  padding: 1.35rem 1.4rem;
+}
+
+.nacht .fakt {
+  background: var(--nacht);
+}
+
+.fakt dt {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinte-leise);
+  margin-bottom: 0.45rem;
+}
+
+.nacht .fakt dt {
+  color: var(--papier-leise);
+}
+
+.fakt dd {
+  margin: 0;
+  font-family: var(--schrift-anzeige), Georgia, serif;
+  font-size: 1.22rem;
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 24;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------- Getränkekarte */
+
+.karte-kategorie + .karte-kategorie {
+  margin-top: clamp(2.25rem, 5vw, 3.25rem);
+}
+
+.karte-kategorie h3 {
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  margin-bottom: 0.35rem;
+}
+
+.karte-kategorie .beschreibung {
+  color: var(--tinte-leise);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  max-width: var(--text-max);
+}
+
+.karte-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--linie);
+  border-block: 1px solid var(--linie);
+}
+
+.karte-eintrag {
+  background: var(--papier);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1.25rem;
+  padding: 1rem 0.1rem;
+}
+
+.karte-eintrag .name {
+  font-family: var(--schrift-anzeige), Georgia, serif;
+  font-size: 1.1rem;
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 20;
+}
+
+.karte-eintrag .preis {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.karte-eintrag .beschreibung {
+  grid-column: 1 / -1;
+  font-size: 0.93rem;
+  color: var(--tinte-leise);
+  max-width: var(--text-max);
+}
+
+.karte-eintrag .zusatz {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinte-leise);
+}
+
+/* Ehrlicher Hinweis, solange keine Karte vorliegt */
+.karte-hinweis {
+  border: 1px solid var(--linie);
+  border-left: 3px solid var(--amarena);
+  background: var(--papier-warm);
+  padding: clamp(1.25rem, 3vw, 1.85rem);
+  max-width: var(--text-max);
+}
+
+.karte-hinweis p {
+  margin: 0;
+}
+
+.nacht .karte-hinweis {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--linie-nacht);
+  border-left-color: var(--amarena-hell);
+}
+
+/* ------------------------------------------------------------------ Spalten */
+
+.spalten {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.spalte h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ------------------------------------------------------------------ Kontakt */
+
+.kontakt {
+  display: grid;
+  gap: clamp(1.75rem, 5vw, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  align-items: start;
+}
+
+.kontakt-karte {
+  border: 1px solid var(--linie);
+  padding: clamp(1.35rem, 3.5vw, 2rem);
+  background: var(--papier);
+}
+
+.kontakt-karte h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.kontakt-karte address {
+  font-style: normal;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ------------------------------------------------------------------- Aufruf */
+
+.aufruf {
+  position: relative;
+  background: var(--nacht);
+  color: var(--papier);
+  padding: clamp(2.25rem, 6vw, 3.5rem);
+  overflow: hidden;
+}
+
+.aufruf::before {
+  /* zwei Saiten als Rahmen – dasselbe Motiv wie im Hero */
+  content: "";
+  position: absolute;
+  inset: 0.65rem 0;
+  border-top: 1px solid var(--linie-nacht);
+  border-bottom: 1px solid var(--linie-nacht);
+  pointer-events: none;
+}
+
+.aufruf h2 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  max-width: 22ch;
+}
+
+.aufruf p {
+  margin-top: 0.9rem;
+  color: var(--papier-leise);
+  max-width: 40ch;
+}
+
+/* --------------------------------------------------------------- Seitenkopf */
+
+.seitenkopf {
+  padding-block: clamp(2.75rem, 7vw, 4.5rem) clamp(1.75rem, 4vw, 2.75rem);
+  border-bottom: 1px solid var(--linie);
+}
+
+.seitenkopf h1 {
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+}
+
+.seitenkopf .einleitung {
+  margin-top: 1rem;
+  max-width: var(--text-max);
+  font-size: 1.08rem;
+  color: var(--tinte-leise);
+}
+
+/* ---------------------------------------------------------------- Rechtstext */
+
+.rechtstext {
+  max-width: var(--text-max);
+}
+
+.rechtstext h2 {
+  font-size: 1.45rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.rechtstext h2:first-child {
+  margin-top: 0;
+}
+
+.rechtstext h3 {
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.rechtstext ul {
+  padding-left: 1.15rem;
+}
+
+.rechtstext li {
+  margin-bottom: 0.35rem;
+}
+
+.stand {
+  font-size: 0.85rem;
+  color: var(--tinte-leise);
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------------------------------------ Fusszeile */
+
+.fuss {
+  background: var(--tiefe);
+  color: var(--papier-leise);
+  padding-block: clamp(2.5rem, 6vw, 4rem) 1.75rem;
+  font-size: 0.93rem;
+}
+
+.fuss-raster {
+  display: grid;
+  gap: clamp(1.75rem, 5vw, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.fuss h2 {
+  font-size: 0.74rem;
+  font-family: var(--schrift-text), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--papier-leise);
+  margin-bottom: 0.85rem;
+}
+
+.fuss a {
+  text-decoration: none;
+}
+
+/* Fusszeilen-Links stehen einzeln – sie bekommen eine Tippfläche von mindestens 44 px. */
+.fuss ul li a,
+.fuss address a,
+.fuss .textlink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+}
+
+.fuss a:hover {
+  color: var(--amarena-hell);
+}
+
+.fuss address {
+  font-style: normal;
+  line-height: 1.75;
+}
+
+.fuss ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fuss li {
+  margin-bottom: 0.3rem;
+}
+
+.fuss .wortmarke .name {
+  color: var(--papier);
+}
+
+.fuss-unten {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--linie-nacht);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.fuss-unten nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin-left: auto;
+}
+
+.fuss-unten nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.55rem;
+}
+
+/* ---------------------------------------------------------------------- 404 */
+
+.fehler {
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  background: var(--nacht);
+  color: var(--papier);
+  padding-block: clamp(3rem, 9vw, 6rem);
+}
+
+.fehler .nummer {
+  font-family: var(--schrift-anzeige), Georgia, serif;
+  font-size: clamp(3.5rem, 14vw, 8rem);
+  font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 144;
+  line-height: 0.9;
+  color: var(--flieder);
+  margin: 0 0 1rem;
+}
+
+/* --------------------------------------------------------------- Bewegungen */
+
+/*
+ * Einblenden beim Scrollen. Standard ist der sichtbare Zustand – erst wenn
+ * JavaScript `data-anim="an"` setzt (und keine reduzierte Bewegung gewünscht ist),
+ * wird überhaupt animiert. Ohne JavaScript ist die Seite vollständig lesbar.
+ */
+html[data-anim="an"] .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+html[data-anim="an"] .reveal.sichtbar {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 620ms var(--kurve),
+    transform 620ms var(--kurve);
+}
+
+html[data-anim="an"] .woche-balken {
+  transform: scaleX(0);
+}
+
+html[data-anim="an"] .sichtbar .woche-balken,
+html[data-anim="an"] .woche-zeile.sichtbar .woche-balken {
+  transform: scaleX(1);
+  transition: transform 900ms var(--kurve);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  html[data-anim="an"] .reveal,
+  html[data-anim="an"] .woche-balken {
+    opacity: 1;
+    transform: none;
+  }
+}
