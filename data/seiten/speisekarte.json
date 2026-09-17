@@ -1,14 +1,14 @@
 {
-  "id": "seite-getraenke",
-  "slug": "getraenke",
-  "titel": "Getränke & Speisen",
+  "id": "seite-speisekarte",
+  "slug": "speisekarte",
+  "titel": "Speisekarte",
   "einleitung": "Auszüge aus der Karte im Lokal, fotografisch belegt am 17. September 2026. Nicht abschliessend – Bezeichnungen, Preise und Verfügbarkeit können sich seither geändert haben.",
-  "seoTitel": "Getränke & Speisen",
-  "seoBeschreibung": "Auszug aus der Getränke- und Speisekarte der Baryton Cocktail Lounge, Schweizergasse 8, Zürich: Bier, Aperitif, Salate, Burger und Pizza.",
+  "seoTitel": "Speisekarte",
+  "seoBeschreibung": "Auszug aus der Speise- und Getränkekarte der Baryton Cocktail Lounge, Schweizergasse 8, Zürich: Salate, Burger, Flammkuchen, Pizza, Bier und Aperitif.",
   "bausteine": [
     {
       "_type": "faktenBaustein",
-      "_key": "getraenke-fakten",
+      "_key": "speisekarte-fakten",
       "kurzzeile": "Ausgeschildert",
       "titel": "Was am Haus steht",
       "fakten": [
@@ -30,24 +30,25 @@
       ]
     },
     {
+      "_type": "speisenBaustein",
+      "_key": "speisekarte-speisen",
+      "kurzzeile": "Zu essen",
+      "titel": "Speisen",
+      "einleitung": "Von der gedruckten Karte im Lokal: Salate, Burger, Flammkuchen und die Pizzaauswahl. Dazu einzelne Gerichte von einer Kreidetafel.",
+      "mitSprungmarken": true
+    },
+    {
       "_type": "karteBaustein",
-      "_key": "getraenke-karte",
-      "kurzzeile": "Karte",
+      "_key": "speisekarte-getraenke",
+      "kurzzeile": "Zu trinken",
       "titel": "Getränke",
       "einleitung": "Fotografisch belegter Ausschnitt: Saison-Glühwein, Bier, Aperitif und einige Klassiker. Die vollständige Cocktailkarte liegt nicht vor.",
+      "mitSprungmarken": true,
       "hinweis": "Sobald eine vollständige Karte des Betriebs vorliegt, erscheint sie an dieser Stelle – mit Bezeichnungen, Mengen und Preisen genau so, wie der Betrieb sie führt."
     },
     {
-      "_type": "speisenBaustein",
-      "_key": "getraenke-speisen",
-      "kurzzeile": "Karte",
-      "titel": "Speisen",
-      "einleitung": "Ebenfalls fotografisch belegt: die gedruckte Salat-, Burger- und Pizzakarte sowie einzelne Gerichte von einer Kreidetafel im Lokal.",
-      "hinweis": "Sobald eine vollständige Speisekarte des Betriebs vorliegt, erscheint sie an dieser Stelle."
-    },
-    {
       "_type": "textBaustein",
-      "_key": "getraenke-erklaerung",
+      "_key": "speisekarte-erklaerung",
       "kurzzeile": "Vorbereitet",
       "titel": "Wie dieser Bereich aufgebaut ist",
       "dunkel": true,
@@ -99,7 +100,7 @@
     },
     {
       "_type": "aufrufBaustein",
-      "_key": "getraenke-aufruf",
+      "_key": "speisekarte-aufruf",
       "titel": "Fragen zur Karte",
       "text": "Für verbindliche Preise, Tagesangebote und die aktuelle Verfügbarkeit gilt allein die Auskunft des Betriebs.",
       "knopf": {

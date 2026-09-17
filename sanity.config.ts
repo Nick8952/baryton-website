@@ -62,27 +62,27 @@ export default defineConfig({
             select: { name: "name" },
             resolve: (doc) => ({
               locations: [
-                { title: `${doc?.name ?? "Getränk"} – Getränke`, href: "/getraenke" },
+                { title: `${doc?.name ?? "Getränk"} – Speisekarte`, href: "/speisekarte" },
                 { title: "Startseite", href: "/" },
               ],
             }),
           }),
           getraenkekategorie: defineLocations({
             select: { titel: "titel" },
-            resolve: (doc) => ({ locations: [{ title: `${doc?.titel ?? "Kategorie"} – Getränke`, href: "/getraenke" }] }),
+            resolve: (doc) => ({ locations: [{ title: `${doc?.titel ?? "Kategorie"} – Speisekarte`, href: "/speisekarte" }] }),
           }),
           speise: defineLocations({
             select: { name: "name" },
             resolve: (doc) => ({
               locations: [
-                { title: `${doc?.name ?? "Speise"} – Getränke & Speisen`, href: "/getraenke" },
+                { title: `${doc?.name ?? "Speise"} – Speisekarte`, href: "/speisekarte" },
                 { title: "Startseite", href: "/" },
               ],
             }),
           }),
           speisekategorie: defineLocations({
             select: { titel: "titel" },
-            resolve: (doc) => ({ locations: [{ title: `${doc?.titel ?? "Kategorie"} – Getränke & Speisen`, href: "/getraenke" }] }),
+            resolve: (doc) => ({ locations: [{ title: `${doc?.titel ?? "Kategorie"} – Speisekarte`, href: "/speisekarte" }] }),
           }),
           sonderoeffnungszeit: defineLocations({
             message: "Abweichende Zeiten erscheinen auf der Besuchsseite.",

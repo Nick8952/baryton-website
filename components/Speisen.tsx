@@ -6,5 +6,12 @@ import { Preisliste } from "./Preisliste";
  * es werden nie erfundene Gerichte oder Preise gezeigt.
  */
 export function Speisen({ baustein }: { baustein: SpeisenBaustein }) {
-  return <Preisliste kategorien={baustein.kategorien} eintraege={baustein.speisen} hinweis={baustein.hinweis} />;
+  return (
+    <Preisliste
+      kategorien={baustein.kategorien}
+      eintraege={baustein.speisen}
+      hinweis={baustein.hinweis}
+      mitSprungmarken={baustein.mitSprungmarken}
+    />
+  );
 }

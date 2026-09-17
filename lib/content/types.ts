@@ -217,6 +217,8 @@ export interface KarteBaustein extends BausteinBasis {
   getraenke: Getraenk[];
   /** Text, der erscheint, wenn keine Getränke hinterlegt sind */
   hinweis?: string;
+  /** Kurze Sprungliste über der Karte – hilft bei vielen Kategorien */
+  mitSprungmarken?: boolean;
   weiterLink?: Link;
 }
 
@@ -232,6 +234,8 @@ export interface SpeisenBaustein extends BausteinBasis {
   speisen: Speise[];
   /** Text, der erscheint, wenn keine Speisen hinterlegt sind */
   hinweis?: string;
+  /** Kurze Sprungliste über der Karte – hilft bei vielen Kategorien */
+  mitSprungmarken?: boolean;
   weiterLink?: Link;
 }
 

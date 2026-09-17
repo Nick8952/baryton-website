@@ -851,6 +851,42 @@ a.wortmarke:hover img {
 
 /* --------------------------------------------------------------- Getränkekarte */
 
+/* Sprungliste über einer langen Karte */
+.karte-sprung {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.karte-sprung a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--tinte-leise);
+  transition:
+    border-color var(--tempo) var(--kurve),
+    color var(--tempo) var(--kurve),
+    background var(--tempo) var(--kurve);
+}
+
+.karte-sprung a:hover {
+  color: var(--amarena);
+  border-color: color-mix(in srgb, var(--amarena) 40%, transparent);
+  background: var(--papier-warm);
+}
+
+.karte-kategorie {
+  /* Die Kopfzeile ist klebend – sonst landet ein Sprungziel darunter. */
+  scroll-margin-top: 6rem;
+}
+
 .karte-kategorie + .karte-kategorie {
   margin-top: clamp(2.25rem, 5vw, 3.25rem);
 }
@@ -858,6 +894,8 @@ a.wortmarke:hover img {
 .karte-kategorie h3 {
   font-size: clamp(1.35rem, 3vw, 1.7rem);
   margin-bottom: 0.35rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--tinte);
 }
 
 .karte-kategorie .beschreibung {
@@ -881,6 +919,8 @@ a.wortmarke:hover img {
   background: var(--papier);
   display: grid;
   grid-template-columns: 1fr auto;
+  /* Name und Preis auf einer Grundlinie, obwohl der Name grösser gesetzt ist. */
+  align-items: baseline;
   gap: 0.35rem 1.25rem;
   padding: 1rem 0.1rem;
 }
@@ -896,7 +936,7 @@ a.wortmarke:hover img {
   white-space: nowrap;
 }
 
-/* Mehrere Grössen (z. B. Pizza Standard/Medium/Family) stehen untereinander statt in einer Zahl. */
+/* Mehrere Grössen (z. B. Glas/Flasche) stehen untereinander statt in einer Zahl. */
 .karte-eintrag .preis.varianten {
   display: flex;
   flex-direction: column;
@@ -906,6 +946,54 @@ a.wortmarke:hover img {
   font-size: 0.85rem;
   white-space: normal;
   text-align: right;
+}
+
+/*
+ * Haben alle Einträge einer Kategorie dieselben Grössen (Pizza: Standard/Medium/Family),
+ * stehen die Namen einmal als Spaltenkopf und darunter nur noch die Zahlen. Feste
+ * Spaltenbreite, damit die Preise über alle Zeilen hinweg untereinander stehen.
+ */
+.karte-preise {
+  --preis-spalte: 4.75rem;
+  display: grid;
+  grid-auto-flow: column;
+  /* Mindestbreite hält die Preise über alle Zeilen bündig; eine längere
+     Grössenbezeichnung darf die Spalte trotzdem verbreitern statt überzulaufen. */
+  grid-auto-columns: minmax(var(--preis-spalte), max-content);
+  gap: 0.25rem;
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.karte-spaltenkopf {
+  margin: 0 0 0.35rem;
+  justify-self: end;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinte-leise);
+}
+
+/* Der Spaltenkopf sitzt rechts über der Liste, bündig mit den Preisspalten. */
+.karte-kategorie > .karte-spaltenkopf {
+  display: grid;
+  margin-left: auto;
+  width: fit-content;
+}
+
+@media (max-width: 34rem) {
+  .karte-preise {
+    --preis-spalte: 3.45rem;
+    gap: 0.15rem;
+    font-size: 0.85rem;
+  }
+
+  .karte-spaltenkopf {
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+  }
 }
 
 

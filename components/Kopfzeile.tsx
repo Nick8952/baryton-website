@@ -7,7 +7,7 @@ import { Wortmarke } from "./Wortmarke";
 import { SmartLink } from "./SmartLink";
 import { StatusAnzeige } from "./StatusAnzeige";
 
-/** «/getraenke/» und «/getraenke» sollen beide als aktiv gelten. */
+/** «/speisekarte/» und «/speisekarte» sollen beide als aktiv gelten. */
 const normiert = (pfad: string) => (pfad !== "/" ? pfad.replace(/\/$/, "") : "/");
 
 export function Kopfzeile({ einstellungen }: { einstellungen: Einstellungen }) {

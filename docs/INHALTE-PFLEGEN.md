@@ -18,11 +18,14 @@ npm run export:pruefen
 |---|---|
 | `data/einstellungen.json` | Name, Adresse, Telefon, Öffnungszeiten, Navigation, Footer-Links, Demo-Hinweis, Suchmaschinen-Grundtext |
 | `data/seiten/start.json` | Startseite: Schriftzug, Text, Knöpfe, Abschnitte |
-| `data/seiten/getraenke.json` | Getränkeseite |
-| `data/seiten/besuch.json` | Besuch & Kontakt |
+| `data/seiten/lounge.json` | Die Lounge |
+| `data/seiten/speisekarte.json` | Speisekarte (Speisen und Getränke) |
+| `data/seiten/besuch.json` | Besuch |
+| `data/seiten/kontakt.json` | Kontakt |
 | `data/seiten/impressum.json`, `datenschutz.json` | verweisen nur auf den Rechtstext |
 | `data/rechtstexte/impressum.json`, `datenschutz.json` | die eigentlichen Rechtstexte |
-| `data/getraenkekategorien.json`, `data/getraenke.json` | die Getränkekarte (derzeit leer) |
+| `data/getraenkekategorien.json`, `data/getraenke.json` | die Getränke |
+| `data/speisekategorien.json`, `data/speisen.json` | die Speisen |
 
 ## Öffnungszeiten ändern
 
@@ -44,33 +47,58 @@ einzeln eintragen, sonst fehlen Zeilen in der Wochengrafik und der Hinweis
 Sobald der Betrieb die Zeiten bestätigt hat, `oeffnungszeitenHinweis` leeren –
 dann verschwindet der Herkunftshinweis unter der Grafik.
 
-## Getränkekarte eintragen
+## Karte pflegen (Speisen und Getränke)
 
-Sobald eine echte Karte vorliegt: zuerst die Kategorien, dann die Getränke.
+Speisen und Getränke funktionieren gleich, nur in eigenen Dateien: zuerst die
+Kategorien, dann die Einträge.
 
-`data/getraenkekategorien.json`:
+`data/speisekategorien.json` (bzw. `data/getraenkekategorien.json`):
 
 ```json
 [
-  { "id": "kat-signature", "titel": "Signature Drinks", "reihenfolge": 1 },
-  { "id": "kat-alkoholfrei", "titel": "Alkoholfrei", "reihenfolge": 2 }
+  { "id": "sp-kat-salate", "titel": "Salate", "reihenfolge": 1 },
+  { "id": "sp-kat-burger", "titel": "Burger",
+    "beschreibung": "Serviert mit Kartoffel-Wedges.", "reihenfolge": 2 }
 ]
 ```
 
-`data/getraenke.json`:
+`data/speisen.json` (bzw. `data/getraenke.json`) – ein einzelner Preis:
 
 ```json
 [
-  { "id": "drink-beispiel", "name": "Bezeichnung laut Karte",
-    "beschreibung": "Zutaten laut Karte", "preis": 18.5, "menge": "4 cl",
-    "kategorie": "kat-signature", "reihenfolge": 1 }
+  { "id": "sp-beispiel", "name": "Bezeichnung laut Karte",
+    "beschreibung": "Zutaten laut Karte", "preis": 18.5,
+    "kategorie": "sp-kat-salate", "reihenfolge": 1 }
 ]
+```
+
+Gibt es **mehrere Grössen** (Pizza, Bier, Glas/Flasche), statt `preis` die
+`varianten` verwenden:
+
+```json
+{ "id": "sp-pizza-beispiel", "name": "Chicago",
+  "beschreibung": "Tomatensauce, Mozzarella, Tomaten.",
+  "varianten": [
+    { "_key": "v1", "bezeichnung": "Standard", "preis": 17.9 },
+    { "_key": "v2", "bezeichnung": "Medium", "preis": 26.8 },
+    { "_key": "v3", "bezeichnung": "Family", "preis": 36.5 }
+  ],
+  "kategorie": "sp-kat-pizza", "reihenfolge": 2 }
 ```
 
 - `preis` ist eine **Zahl**, kein Text: `18` wird zu «18.–», `18.5` zu «18.50».
+- `preis` und `varianten` nie zusammen setzen – die Inhaltsprüfung meldet das.
+- Haben **alle** Einträge einer Kategorie dieselben Grössennamen, setzt die Website
+  sie automatisch einmal als Spaltenkopf und stellt die Preise bündig untereinander.
+  Fehlt einem Eintrag eine Grösse, bleibt die Spalte dort leer – dafür gehört ein
+  `hinweis` an den Eintrag, damit klar ist, warum.
+- Ohne Preis geht auch: Name eintragen und im `hinweis` erklären, warum keiner
+  dasteht. Besser als ein geschätzter Preis.
 - Alles ausser `name`, `kategorie` und `reihenfolge` ist freiwillig.
-- Sobald mindestens ein Getränk erfasst ist, verschwindet der Hinweistext auf der
-  Getränkeseite von selbst. Den Hinweis in `data/seiten/getraenke.json` dann löschen.
+- Sobald mindestens ein Eintrag erfasst ist, verschwindet der Hinweistext des
+  jeweiligen Abschnitts auf der Speisekarte von selbst.
+- Die Sprungliste über einer Karte schaltet `"mitSprungmarken": true` im jeweiligen
+  Baustein in `data/seiten/speisekarte.json` ein (sinnvoll ab drei Kategorien).
 
 Bezeichnungen, Mengen und Preise **exakt** aus der Karte des Betriebs übernehmen.
 

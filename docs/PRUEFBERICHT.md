@@ -19,18 +19,25 @@ Alle laufen auch im GitHub-Actions-Workflow:
 | `npm run typecheck` | ✓ keine Fehler |
 | `npm run build:pages` | ✓ 10 Seiten erzeugt |
 | `npm run export:pruefen` | ✓ 10 HTML- und 1 CSS-Datei, 372 interne Verweise korrekt unter dem Unterpfad, keine externen Ressourcen, `noindex` auf allen Seiten |
-| `npm run seed -- --probe` | ✓ 55 Dokumente, keine doppelten IDs (schreibt nichts) |
+| `npm run seed -- --probe` | ✓ 63 Dokumente, keine doppelten IDs (schreibt nichts) |
 
 **Nachtrag 17.09.2026:** Getränke- und Speisekarte um einen fotografisch belegten
-Ausschnitt erweitert (Bier mit Preisvarianten für 5 dl/1 Liter, Aperitif, Salate,
+Ausschnitt erweitert (Bier mit Preisvarianten für 0.5 l und Mass, Aperitif, Salate,
 Burger, Flammkuchen, 16 Pizzen mit Standard-/Medium-/Family-Preisen). Dafür das
 Inhaltsmodell um `Speise`/`Speisekategorie` sowie `Preisvariante` erweitert
 (Getränke und Speisen können jetzt mehrere Grössen mit je eigenem Preis haben,
 z. B. Bier oder Pizza) und an allen acht Stellen nachgezogen (Typen, lokaler und
 Sanity-Provider, Sanity-Schemas, Studio-Struktur, Inhaltsprüfung, Importskript,
-Komponenten). Alle sechs Prüfungen anschliessend erneut grün; Getränke-Seite bei
-1440 und 390 px ohne horizontalen Überlauf geprüft, Preisvarianten stapeln sich
-lesbar untereinander statt in einer Zeile.
+Komponenten). Alle sechs Prüfungen anschliessend erneut grün.
+
+**Nachtrag, zweite Runde:** Die Seite heisst jetzt «Speisekarte» (vorher «Getränke»),
+Slug `/speisekarte`, Speisen stehen vor den Getränken. Für die Übersicht kamen dazu:
+eine Sprungliste zu den Kategorien, deutlichere Kategorie-Überschriften und – wenn
+alle Einträge einer Kategorie dieselben Grössen haben – ein einmaliger Spaltenkopf
+(«Standard / Medium / Family») statt 16-fach wiederholter Grössennamen. Die
+Grössennamen bleiben für Screenreader an jedem einzelnen Preis stehen.
+Bei 1440 und 390 px ohne horizontalen Überlauf geprüft; alle Sprungmarken zeigen
+auf ein vorhandenes Ziel.
 
 ## Öffnungszeiten-Logik
 
@@ -85,7 +92,7 @@ angesehen.
 - **Reduzierte Bewegung:** Mit `prefers-reduced-motion: reduce` wird `data-anim` gar
   nicht erst gesetzt. Kein Abschnitt ist ausgeblendet, kein Balken zusammengefaltet.
   Dasselbe gilt ohne JavaScript.
-- **Navigation ohne Neuladen:** Start → Besuch → Getränke → Zurück-Taste, jede Seite
+- **Navigation ohne Neuladen:** Start → Besuch → Speisekarte → Zurück-Taste, jede Seite
   vollständig durchgescrollt: kein Abschnitt bleibt unsichtbar.
 - **Bildschirmleser:** Die Balken der Wochengrafik sind `aria-hidden`; Tag und Zeit
   stehen als Text, der laufende Tag zusätzlich mit «(heute)». Nicht mit einem echten
@@ -162,7 +169,7 @@ nicht nur lokal:
 | Adresse | Ergebnis |
 |---|---|
 | `/` | HTTP 200 |
-| `/getraenke/` | HTTP 200 |
+| `/speisekarte/` | HTTP 200 |
 | `/besuch/` | HTTP 200 |
 | `/impressum/` | HTTP 200 |
 | `/datenschutz/` | HTTP 200 |

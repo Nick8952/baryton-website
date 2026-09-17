@@ -45,7 +45,7 @@ try {
   process.exit(1);
 }
 if (!seiten.length) { console.error("✗ out/ enthält keine HTML-Dateien."); process.exit(1); }
-const erwarteteSeiten = ["index.html", "404.html", "lounge/index.html", "getraenke/index.html", "besuch/index.html", "kontakt/index.html", "impressum/index.html", "datenschutz/index.html"];
+const erwarteteSeiten = ["index.html", "404.html", "lounge/index.html", "speisekarte/index.html", "besuch/index.html", "kontakt/index.html", "impressum/index.html", "datenschutz/index.html"];
 for (const s of erwarteteSeiten) if (!(await existiert(path.join(WURZEL, s)))) fehler.push(`Seite fehlt im Export: ${s}`);
 if (!(await existiert(path.join(WURZEL, "404.html")))) fehler.push("out/404.html fehlt");
 let geprueft = 0;

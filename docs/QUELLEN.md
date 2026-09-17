@@ -20,8 +20,8 @@ könnten – die Website wurde vollständig aus geprüften Einzelangaben aufgeba
 | Telefon 043 344 80 30 | Google-Profil; identisch bei firmen.ch, Yelp, Tripadvisor | bestätigt | Telefonlinks, Impressum, JSON-LD |
 | Kategorie «Loungebar» | Google-Profil | bestätigt | Beschreibungstexte, `BarOrPub` in JSON-LD |
 | Öffnungszeiten Di 15:30–23:00, Mi 15:30–23:00, Do 15:30–00:00, Fr 15:30–02:00, Sa 15:00–02:00, So + Mo geschlossen | Google-Profil, abgerufen 17.09.2026 | **nicht vom Betrieb bestätigt** | Wochengrafik, Footer, JSON-LD – **mit sichtbarem Herkunftshinweis auf der Website** |
-| Wortlaut «Coffee · Lounge · Food-Break» | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026 | bestätigt | Startseite, Lounge- und Getränkeseite |
-| «Appenzeller Bier» als ausgeschildertes Bier | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026 | bestätigt | Startseite und Getränkeseite; keine Aussage über aktuelle Verfügbarkeit oder Preis |
+| Wortlaut «Coffee · Lounge · Food-Break» | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026 | bestätigt | Startseite, Lounge-Seite und Speisekarte |
+| «Appenzeller Bier» als ausgeschildertes Bier | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026 | bestätigt | Startseite und Speisekarte; keine Aussage über aktuelle Verfügbarkeit oder Preis |
 | Nachgezeichnete Wortmarke | Vom Nutzer bereitgestelltes Foto des Leuchtschilds am Lokal, 17.09.2026; per KI nachgezeichnet | Freigabe von Nick für diese Vorschau | Kopfzeile, Hero und Footer; **nicht die Originaldatei oder das offizielle Logo des Betriebs** |
 
 ## Getränke- und Speisekarte (Nachtrag, Fotos von Nick, 17.09.2026)
@@ -34,12 +34,12 @@ Foto klar lesbar ist; Preise wurden nirgends geschätzt.
 
 | Angabe | Quelle | Prüfstatus | Verwendung |
 |---|---|---|---|
-| Salate, Burger, Wings, Flammkuchen, 16 Pizzen (Namen, Zutaten, Preise) | Foto der gedruckten Lunch-Karte des Lokals | bestätigt (Fotobeleg) | Seite «Getränke & Speisen» |
-| Appenzeller Lager/Quöllfrisch/Dunkel, je 5 dl und 1 Liter (Mass) | Foto einer Preistafel («Käferwiesn») | bestätigt für die Biersorten/-preise; **die Tafel selbst ist eine Saison-/Eventkarte**, siehe unten | Getränkeseite, Kategorie «Bier» |
-| Sangria Spritz, Rosé Spritz, Aperol Spritz, Hugo | Foto einer Bar-Kreidetafel | bestätigt (Fotobeleg) | Getränkeseite, Kategorie «Aperitif» |
-| Negroni, Moscow Mule, Dark'n Stormy, Amaretto Sour (Namen) | Foto einer Bar-Kreidetafel (Cocktailkarte) | Namen bestätigt; **Preis auf dem Foto nicht vollständig lesbar** (oberer Bildrand abgeschnitten) | Getränkeseite, Kategorie «Klassiker», ohne Preis |
-| Rindstatar, Schinken-Käse-Toast, Gemischte Plättli, Tomatensuppe | Foto einer Kreidetafel im Lokal | bestätigt (Fotobeleg); **kein Preis auf der Tafel angegeben** | Speisenseite, Kategorie «Weitere Klassiker» |
-| Glühwein, hausgemacht, CHF 16.–, November–Dezember | Foto einer Kreidetafel im Lokal | bestätigt (Fotobeleg) | Getränkeseite, Kategorie «Saisonal» |
+| Salate, Burger, Wings, Flammkuchen, 16 Pizzen (Namen, Zutaten, Preise) | Foto der gedruckten Lunch-Karte des Lokals | bestätigt (Fotobeleg) | Seite «Speisekarte» |
+| Appenzeller Lager/Quöllfrisch/Dunkel, je 0.5 l und Mass | Foto einer Preistafel («Käferwiesn») | bestätigt für die Biersorten/-preise; **die Tafel selbst ist eine Saison-/Eventkarte**, siehe unten | Speisekarte, Kategorie «Bier» |
+| Sangria Spritz, Rosé Spritz, Aperol Spritz, Hugo | Foto einer Bar-Kreidetafel | bestätigt (Fotobeleg) | Speisekarte, Kategorie «Aperitif» |
+| Negroni, Moscow Mule, Dark'n Stormy, Amaretto Sour (Namen) | Foto einer Bar-Kreidetafel (Cocktailkarte) | Namen bestätigt; **Preis auf dem Foto nicht vollständig lesbar** (oberer Bildrand abgeschnitten) | Speisekarte, Kategorie «Klassiker», ohne Preis |
+| Rindstatar, Schinken-Käse-Toast, Gemischte Plättli, Tomatensuppe | Foto einer Kreidetafel im Lokal | bestätigt (Fotobeleg); **kein Preis auf der Tafel angegeben** | Speisekarte, Kategorie «Weitere Klassiker» |
+| Glühwein, hausgemacht, CHF 16.–, November–Dezember | Foto einer Kreidetafel im Lokal | bestätigt (Fotobeleg) | Speisekarte, Kategorie «Saisonal» |
 
 **Zur «Käferwiesn»-Tafel:** Das Foto zeigt eine thematische Sonderkarte (Bierzelt-/
 Oktoberfest-Stil: Bierbrezn, Weisswürste, Wiesn-Familienpizza). Das ist erkennbar

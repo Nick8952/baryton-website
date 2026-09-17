@@ -6,5 +6,12 @@ import { Preisliste } from "./Preisliste";
  * es werden nie Beispielgetränke oder Preise erfunden.
  */
 export function Karte({ baustein }: { baustein: KarteBaustein }) {
-  return <Preisliste kategorien={baustein.kategorien} eintraege={baustein.getraenke} hinweis={baustein.hinweis} />;
+  return (
+    <Preisliste
+      kategorien={baustein.kategorien}
+      eintraege={baustein.getraenke}
+      hinweis={baustein.hinweis}
+      mitSprungmarken={baustein.mitSprungmarken}
+    />
+  );
 }

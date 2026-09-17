@@ -12,8 +12,16 @@
     "id": "getr-appenzeller-lager",
     "name": "Appenzeller Lager",
     "varianten": [
-      { "_key": "v1", "bezeichnung": "5 dl", "preis": 8.5 },
-      { "_key": "v2", "bezeichnung": "1 Liter (Mass)", "preis": 15.5 }
+      {
+        "_key": "v1",
+        "bezeichnung": "0.5 l",
+        "preis": 8.5
+      },
+      {
+        "_key": "v2",
+        "bezeichnung": "Mass",
+        "preis": 15.5
+      }
     ],
     "kategorie": "kat-bier",
     "reihenfolge": 1
@@ -22,8 +30,16 @@
     "id": "getr-appenzeller-quoellfrisch",
     "name": "Appenzeller Quöllfrisch",
     "varianten": [
-      { "_key": "v1", "bezeichnung": "5 dl", "preis": 8.5 },
-      { "_key": "v2", "bezeichnung": "1 Liter (Mass)", "preis": 15.5 }
+      {
+        "_key": "v1",
+        "bezeichnung": "0.5 l",
+        "preis": 8.5
+      },
+      {
+        "_key": "v2",
+        "bezeichnung": "Mass",
+        "preis": 15.5
+      }
     ],
     "kategorie": "kat-bier",
     "reihenfolge": 2
@@ -32,8 +48,16 @@
     "id": "getr-appenzeller-dunkel",
     "name": "Appenzeller Dunkel",
     "varianten": [
-      { "_key": "v1", "bezeichnung": "5 dl", "preis": 8.5 },
-      { "_key": "v2", "bezeichnung": "1 Liter (Mass)", "preis": 15.5 }
+      {
+        "_key": "v1",
+        "bezeichnung": "0.5 l",
+        "preis": 8.5
+      },
+      {
+        "_key": "v2",
+        "bezeichnung": "Mass",
+        "preis": 15.5
+      }
     ],
     "kategorie": "kat-bier",
     "reihenfolge": 3
@@ -43,8 +67,16 @@
     "name": "Sangria Spritz",
     "beschreibung": "Weiss oder rot.",
     "varianten": [
-      { "_key": "v1", "bezeichnung": "Glas", "preis": 8.5 },
-      { "_key": "v2", "bezeichnung": "Flasche", "preis": 38.5 }
+      {
+        "_key": "v1",
+        "bezeichnung": "Glas",
+        "preis": 8.5
+      },
+      {
+        "_key": "v2",
+        "bezeichnung": "Flasche",
+        "preis": 38.5
+      }
     ],
     "kategorie": "kat-aperitif",
     "reihenfolge": 1

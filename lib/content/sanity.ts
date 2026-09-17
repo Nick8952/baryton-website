@@ -47,7 +47,7 @@ const BAUSTEINE = `bausteine[] {
   _key, _type, kurzzeile, titel,
   _type == "textBaustein" => { inhalt, breite, dunkel },
   _type == "karteBaustein" => {
-    einleitung, hinweis, weiterLink ${LINK},
+    einleitung, hinweis, mitSprungmarken, weiterLink ${LINK},
     "kategorien": select(
       coalesce(count(kategorien), 0) > 0 => kategorien[]-> ${KATEGORIE},
       *[_type == "getraenkekategorie"] | order(reihenfolge asc) ${KATEGORIE}
@@ -57,7 +57,7 @@ const BAUSTEINE = `bausteine[] {
     )] | order(reihenfolge asc) ${GETRAENK}
   },
   _type == "speisenBaustein" => {
-    einleitung, hinweis, weiterLink ${LINK},
+    einleitung, hinweis, mitSprungmarken, weiterLink ${LINK},
     "kategorien": select(
       coalesce(count(kategorien), 0) > 0 => kategorien[]-> ${SPEISEKATEGORIE},
       *[_type == "speisekategorie"] | order(reihenfolge asc) ${SPEISEKATEGORIE}
